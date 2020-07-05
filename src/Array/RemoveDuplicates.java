@@ -29,13 +29,14 @@ public class RemoveDuplicates {
 	public static void main(String[] args) {
 
 		RemoveDuplicates removeDuplicates = new RemoveDuplicates();
-		int[] nums = { 1, 1, 2 };
-		int result = removeDuplicates.soultion1(nums);
+		int[] nums = { 0, 0, 1, 1, 2, 2, 3, 4, 4};
+//		int result = removeDuplicates.solution1(nums);
+		int result = removeDuplicates.solution2(nums);
 		System.out.println(result);
 
 	}
 
-	public int soultion1(int[] nums) {
+	public int solution1(int[] nums) {
 		if (nums.length == 0)
 			return 0;
 		int i = 0;
@@ -55,6 +56,39 @@ public class RemoveDuplicates {
 
 		return i + 1;
 
+	}
+	
+	public int solution2(int[] nums){
+		
+		int newArrLength = 0 ;
+		
+		for(int i=0; i<nums.length - 1; i++){
+			
+			if(nums[i] != nums[i+1]){
+				newArrLength++ ;
+			}
+		}
+		
+		int[] newArr = new int[newArrLength+1] ;
+		
+		int count = 0 ;
+		for(int j=0; j<nums.length - 1; j++){
+			
+			if(nums[j]!=nums[j+1]){
+				newArr[count] = nums[j] ;
+				count++ ;
+			}
+		}
+		
+		//count the last index no matter how the last two index is duplicate or not
+		newArr[count] = nums[nums.length-1] ;
+		
+		for(int items: newArr){
+			System.out.print(items + " ");
+		}
+		
+		return count + 1 ;
+		
 	}
 
 }
