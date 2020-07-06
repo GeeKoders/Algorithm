@@ -30,7 +30,8 @@ public class RemoveDuplicates {
 		int[] nums = { 0, 0, 1, 1, 2, 2, 3, 4, 4 };
 //		int result = removeDuplicates.solution1(nums);
 //		int result = removeDuplicates.solution2(nums);
-		int result[] = removeDuplicates.solution3(nums);
+//		int result[] = removeDuplicates.solution3(nums);
+		int result = removeDuplicates.solution4(nums);
 		System.out.println(result);
 
 	}
@@ -126,6 +127,25 @@ public class RemoveDuplicates {
 		}
 		return result;
 
+	}
+	
+	public int solution4(int[] nums){
+		
+		if(nums == null || nums.length == 0){
+			return 0 ;
+		}
+		
+		int writePointer = 1 ;
+		for(int readPointer = 1; readPointer < nums.length; readPointer++){
+			
+			if(nums[readPointer] != nums[readPointer-1]){
+				nums[writePointer] = nums[readPointer] ;
+				writePointer ++ ;
+			}
+		}
+		
+		return writePointer ;
+		
 	}
 
 }
