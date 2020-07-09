@@ -11,8 +11,8 @@ public class ReverseArray {
 
 		ReverseArray reverseArray = new ReverseArray() ;
 		int[] nums = {5, 4, 3, 2, 1, 0} ;
-		int []result = reverseArray.solution1(nums);
-		
+//		int []result = reverseArray.solution1(nums);
+		int []result = reverseArray.solution2(nums);
 		for(int items: result){
 			System.out.print(items + " ");
 		}
@@ -34,6 +34,22 @@ public class ReverseArray {
 		return nums ;
 		
 	}
+	// not in-place
+	public int[] solution2(int []nums){
+		
+
+		int[] reverseNum = new int[nums.length];
+
+		int count = 0;
+		for (int i = nums.length - 1; i >= 0; i--) {
+			reverseNum[count++] = nums[i];
+		}
+		
+		return reverseNum ;
+
+	}
+	
+	
 
 	private void swap(int[] nums, int startIndex, int lastIndex) {
 		
