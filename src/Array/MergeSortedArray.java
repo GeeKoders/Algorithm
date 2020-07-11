@@ -37,7 +37,8 @@ public class MergeSortedArray {
 		int[] nums2 = {2, 5, 6} ; 
 		int n = 3 ;
 		
-		mergeSortedArray.solution1(nums1, m, nums2, n);
+//		mergeSortedArray.solution1(nums1, m, nums2, n);
+		mergeSortedArray.solution2(nums1, m, nums2, n);
 	}
 	
 	public void solution1(int[] nums1, int m, int[] nums2, int n) {
@@ -62,6 +63,18 @@ public class MergeSortedArray {
 			System.out.print(item + " ");
 		}
 		
+	}
+	
+	public void solution2(int[] nums1, int m, int[] nums2, int n){
+		 if((m+n)!= nums1.length) return ;
+	        
+	        for(int i=m; i< m+n; i++){
+	            nums1[i] = nums2[m+n-i-1] ;    
+	        }
+	     
+	         Arrays.sort(nums1) ;
+	         
+	         display(nums1) ;
 	}
 } 
 
