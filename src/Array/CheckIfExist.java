@@ -30,7 +30,8 @@ public class CheckIfExist {
 
 		CheckIfExist checkIfExist = new CheckIfExist();
 		int[] arr = { 10, 2, 5, 3 };
-		boolean result = checkIfExist.solution1(arr);
+//		boolean result = checkIfExist.solution1(arr);
+		boolean result = checkIfExist.solution2(arr);
 		System.out.println(result);
 
 	}
@@ -52,6 +53,29 @@ public class CheckIfExist {
 		}
 		return false;
 
+	}
+	// better solution
+	public boolean solution2(int[] arr){
+		
+		if (arr == null || arr.length == 0 || arr.length == 1)
+			return false;
+		
+		
+		
+		for (int i = 0; i < arr.length; i++) {
+			if(serachTarget(arr, i, 2*arr[i])) return true ;
+		}
+		
+		return false ;
+	}
+	
+	public boolean serachTarget(int[] arr, int i, int target){
+		for (int j = 0; j < arr.length; j++) {
+			if (j!=i && arr[j] == target ) {
+				return true;
+			}
+		}
+		return false ;
 	}
 
 }
