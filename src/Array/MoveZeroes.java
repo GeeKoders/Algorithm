@@ -21,13 +21,12 @@ public class MoveZeroes {
 		
 		MoveZeroes moveZeroes = new MoveZeroes() ;
 		int[] nums = {0,1,0,3,12} ;
-		moveZeroes.solution1(nums);
-		
+//		moveZeroes.solution1(nums);
+		moveZeroes.solution2(nums);
 	}
 	
 	public void solution1(int[] nums) {
         
-	       
         int count = 0 ;
         for(int i=0; i<nums.length; i++){
             
@@ -45,5 +44,26 @@ public class MoveZeroes {
         }
         
     }
+	
+	public void solution2(int[] nums){
+		// 2 pointer solution
+        int zeroIndex = 0 ;
+        int index = 0 ;
+        int length = nums.length ;
+        
+        while(index < length){
+            if(nums[index] != 0){
+                int tmp = nums[zeroIndex] ;
+                nums[zeroIndex++] = nums[index] ;
+                nums[index] = tmp ;
+            }
+            
+            index ++ ;
+        }
+        
+        for(int items: nums){
+        	System.out.print(items + " ");
+        }
+	}
 
 }
