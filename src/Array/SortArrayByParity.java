@@ -23,7 +23,8 @@ public class SortArrayByParity {
 
 		SortArrayByParity sortArrayByParity = new SortArrayByParity() ;
 		int[] A = {3,1,2,4} ;
-		int[] result = sortArrayByParity.solution1(A) ;
+//		int[] result = sortArrayByParity.solution1(A) ;
+		int[] result = sortArrayByParity.solution2(A) ;
 		
 		for(int items: result){
 			System.out.print(items + " ");
@@ -46,6 +47,27 @@ public class SortArrayByParity {
         return A ;
         
     }
+	//beter solution but in-place
+	public int[] solution2(int[] A){
+		
+		int[] target = new int[A.length] ;
+		int oddIndex = A.length - 1 ;
+		int evenIndex = 0 ;
+		
+		for(int i=0; i<A.length; i++){
+			
+			if(A[i] % 2 == 0){
+				target[evenIndex] = A[i] ;
+				evenIndex++ ;
+			}else{
+				target[oddIndex] = A[i] ;
+				oddIndex-- ;
+			}
+		}
+		
+		return target ;
+	}
+	
     
     public void swap(int[] A, int i, int j){
         int temp = A[i] ;
