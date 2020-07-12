@@ -31,7 +31,8 @@ public class FindAllNumbersDisappeared {
 		FindAllNumbersDisappeared findAllNumbersDisappeared = new FindAllNumbersDisappeared() ;
 		int[] nums = {4,3,2,7,8,2,3,1} ;
 //		List<Integer> list = findAllNumbersDisappeared.solution1(nums) ;
-		List<Integer> list = findAllNumbersDisappeared.solution2(nums) ;
+//		List<Integer> list = findAllNumbersDisappeared.solution2(nums) ;
+		List<Integer> list = findAllNumbersDisappeared.solution3(nums) ;
 		for(Integer items: list){
 			System.out.print("items:" + items + " ");
 		}
@@ -94,4 +95,28 @@ public class FindAllNumbersDisappeared {
         
         return list ;
     }
+	//better solution
+	public List<Integer> solution3(int[] nums) {
+		
+		List<Integer> list = new ArrayList<Integer>() ;
+        
+	       //[4,3,2,7,8,2,3,1]
+	        
+	        for(int i=0; i<nums.length; i++){
+	            int index = Math.abs(nums[i]) - 1 ;
+	            
+	            if(nums[index] < 0 ){
+	                
+	            }else{
+	                nums[index] = -nums[index] ;
+	            }
+	        }
+	        for(int i=0; i<nums.length; i++){
+	            
+	            if(nums[i]>0){
+	                list.add(i+1) ;                
+	            }
+	        }
+	        return list ;
+	}
 }
