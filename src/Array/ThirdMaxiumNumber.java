@@ -31,10 +31,11 @@ public class ThirdMaxiumNumber {
 
 		ThirdMaxiumNumber thirdMaxiumNumber = new ThirdMaxiumNumber() ;
 		int[] nums = {3, 2, 1} ;
-		int result = thirdMaxiumNumber.solution1(nums) ;
+//		int result = thirdMaxiumNumber.solution1(nums) ;
+		int result = thirdMaxiumNumber.solution2(nums) ;
 		System.out.println("resutl:" + result);
 	}
-	
+	// waste to much time and hard to understand
 	public int solution1(int[] nums) {
         
         if(nums == null || nums.length == 0){
@@ -76,5 +77,36 @@ public class ThirdMaxiumNumber {
         }
         
     }
-
+	//better solution
+	public int solution2(int[] nums) {
+		
+		  	Integer max = null;
+	        Integer second_max = null;
+	        Integer third_max = null;
+	        
+	        for (Integer num : nums) {
+	            if(num.equals(max) || num.equals(second_max) || num.equals(third_max)) {
+	                continue;
+	            }
+	            
+	            if (max == null || num > max) {
+	                third_max = second_max;
+	                second_max = max;
+	                max = num;
+	            } else if (second_max == null || num > second_max) {
+	                third_max = second_max;
+	                second_max = num;
+	            } else if (third_max == null || num > third_max) {
+	                third_max = num;
+	            }
+	        }
+	        
+	        if (third_max == null)
+	        {
+	            return max;
+	        }
+	        
+	        return third_max;
+	    }
+		
 }
