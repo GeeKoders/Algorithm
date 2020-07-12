@@ -2,7 +2,7 @@ package Array;
 
 import java.util.Arrays;
 
-public class TheMaxiumNumber {
+public class ThirdMaxiumNumber {
 
 	/*
 	 * Given a non-empty array of integers, return the third maximum number in
@@ -29,9 +29,9 @@ public class TheMaxiumNumber {
 
 	public static void main(String[] args) {
 
-		TheMaxiumNumber theMaxiumNumber = new TheMaxiumNumber() ;
+		ThirdMaxiumNumber thirdMaxiumNumber = new ThirdMaxiumNumber() ;
 		int[] nums = {3, 2, 1} ;
-		int result = theMaxiumNumber.solution1(nums) ;
+		int result = thirdMaxiumNumber.solution1(nums) ;
 		System.out.println("resutl:" + result);
 	}
 	
