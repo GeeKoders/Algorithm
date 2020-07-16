@@ -47,13 +47,16 @@ public class LinkedList<T> {
 		linkedList1.insertT("4");
 		linkedList1.insertT("5");
 		
-		linkedList2.insertT("6");
-		linkedList2.insertT("7");
-		linkedList2.insertT("8");
-		linkedList2.insertT("9");
-		linkedList2.insertT("10");
+//		linkedList2.insertT("6");
+//		linkedList2.insertT("7");
+//		linkedList2.insertT("8");
+//		linkedList2.insertT("9");
+//		linkedList2.insertT("10");
 		
-		linkedList1.concatenate(linkedList1, linkedList2);
+//		linkedList1.concatenate(linkedList1, linkedList2);
+//		linkedList1.print();
+		
+		linkedList1.reverse();
 		linkedList1.print();
 		
 	}
@@ -177,6 +180,23 @@ public class LinkedList<T> {
 	public void concatenate(LinkedList linkedList1, LinkedList linkedList2){
 		
 		linkedList1.last.next = linkedList2.first ;
+		
+	}
+	
+	public void reverse(){
+		
+		Node<T> c = first ;
+		Node<T> p = null ;
+		Node<T> r = null ;
+		
+		while(c!=null){
+			r = c.next ;
+			c.next = p ;
+			p = c ;
+			c = r ;
+		}
+		
+		first = p ;
 		
 	}
 	
