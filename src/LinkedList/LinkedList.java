@@ -27,8 +27,11 @@ public class LinkedList<T> {
 		linkedList.insertT(5);
 //		linkedList.removeH();
 //		linkedList.removeH();
-		linkedList.removeT();
-		linkedList.removeT();
+//		linkedList.removeT();
+//		linkedList.removeT();
+		
+		linkedList.insertM(6, 7);
+//		linkedList.insertM(6, 7);
 		linkedList.print();
 		
 		
@@ -61,6 +64,37 @@ public class LinkedList<T> {
 			last = newNode ;
 		}
 		
+		
+	}
+	
+	public void insertM(T target, T data){
+		
+		Node<T> newNode = new Node<T>(data) ;
+		boolean findNodeFlag = false ;
+		
+		if(isEmpty()){
+			first = newNode ;
+			last= newNode ;
+		}else{
+			
+			Node<T> current = first ;
+			
+			while(current!=null){
+				
+				
+				if(current!=null & current.data.equals(target)){
+					newNode.next = current.next ;
+					current.next = newNode ;
+					findNodeFlag = true ;
+				}
+				
+				current = current.next ;
+			}
+			
+			if(!findNodeFlag){
+				System.out.println("Target " + target + " not found!");
+			}
+		}
 		
 	}
 	
