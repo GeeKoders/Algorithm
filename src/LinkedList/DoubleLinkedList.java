@@ -21,6 +21,8 @@ public class DoubleLinkedList<T> {
 		doubleLinkedList.insertT("3");
 		doubleLinkedList.insertT("4");
 		doubleLinkedList.insertT("5");
+		doubleLinkedList.insertM("6", "3");
+		doubleLinkedList.insertM("7", "8");
 		doubleLinkedList.print();
 		
 	}
@@ -55,6 +57,42 @@ public class DoubleLinkedList<T> {
 			newNode.lNext = last ;
 			last = newNode ;
 		}
+		
+	}
+	
+	public void insertM(T data, T target){
+		
+		DoubleNode<T> newNode = new DoubleNode<>(data) ;
+		
+		boolean targetFound = false ;
+		
+		if(isEmpty()){
+			System.out.println("No node to insert!");
+		}else{
+			
+			DoubleNode<T> current = first ;
+			DoubleNode<T> r = null ;
+			
+			while(current != null){
+				
+				if(current.data.equals(target)){
+					
+					r = current.rNext ;
+					newNode.rNext = r ;
+					r.lNext = newNode ;
+					newNode.lNext = current ;
+					current.rNext = newNode ;
+					targetFound = true ;
+				}
+				current = current.rNext ;
+			}
+			
+			if(!targetFound){
+				System.out.println("Target " + target + " no found!");
+			}
+			
+		}
+		
 		
 	}
 
