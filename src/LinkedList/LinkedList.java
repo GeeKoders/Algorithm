@@ -8,7 +8,7 @@ public class LinkedList<T> {
 	
 	public static void main(String[] args) {
 
-		LinkedList linkedList = new LinkedList();
+//		LinkedList linkedList = new LinkedList();
 //		linkedList.insertH(1);
 //		linkedList.insertH(2);
 //		linkedList.insertH(3);
@@ -20,11 +20,11 @@ public class LinkedList<T> {
 //		linkedList.insertH(new Person("Alice", "F", 35));
 //		linkedList.print();
 		
-		linkedList.insertT(1);
-		linkedList.insertT(2);
-		linkedList.insertT(3);
-		linkedList.insertT(4);
-		linkedList.insertT(5);
+//		linkedList.insertT(1);
+//		linkedList.insertT(2);
+//		linkedList.insertT(3);
+//		linkedList.insertT(4);
+//		linkedList.insertT(5);
 //		linkedList.removeH();
 //		linkedList.removeH();
 //		linkedList.removeT();
@@ -32,13 +32,29 @@ public class LinkedList<T> {
 		
 //		linkedList.insertM(6, 7);
 //		linkedList.insertM(6, 7);
-		linkedList.removeM(3);
-		linkedList.removeM(4);
-		linkedList.removeM(6);
-		linkedList.print();
+//		linkedList.removeM(3);
+//		linkedList.removeM(4);
+//		linkedList.removeM(6);
+//		linkedList.print();
 		
 		
+		LinkedList linkedList1 = new LinkedList() ;
+		LinkedList linkedList2 = new LinkedList() ;
 		
+		linkedList1.insertT("1");
+		linkedList1.insertT("2");
+		linkedList1.insertT("3");
+		linkedList1.insertT("4");
+		linkedList1.insertT("5");
+		
+		linkedList2.insertT("6");
+		linkedList2.insertT("7");
+		linkedList2.insertT("8");
+		linkedList2.insertT("9");
+		linkedList2.insertT("10");
+		
+		linkedList1.concatenate(linkedList1, linkedList2);
+		linkedList1.print();
 		
 	}
 	
@@ -155,6 +171,12 @@ public class LinkedList<T> {
 		if(!findNodeFlag){
 			System.out.println("Target " + target + " not found!");
 		}
+		
+	}
+	
+	public void concatenate(LinkedList linkedList1, LinkedList linkedList2){
+		
+		linkedList1.last.next = linkedList2.first ;
 		
 	}
 	
