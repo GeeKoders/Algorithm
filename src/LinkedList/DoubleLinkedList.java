@@ -9,11 +9,18 @@ public class DoubleLinkedList<T> {
 	public static void main(String[] args) {
 
 		DoubleLinkedList doubleLinkedList = new DoubleLinkedList() ;
-		doubleLinkedList.insertH("1");
-		doubleLinkedList.insertH("2");
-		doubleLinkedList.insertH("3");
-		doubleLinkedList.insertH("4");
-		doubleLinkedList.insertH("5");
+//		doubleLinkedList.insertH("1");
+//		doubleLinkedList.insertH("2");
+//		doubleLinkedList.insertH("3");
+//		doubleLinkedList.insertH("4");
+//		doubleLinkedList.insertH("5");
+//		doubleLinkedList.print();
+		
+		doubleLinkedList.insertT("1");
+		doubleLinkedList.insertT("2");
+		doubleLinkedList.insertT("3");
+		doubleLinkedList.insertT("4");
+		doubleLinkedList.insertT("5");
 		doubleLinkedList.print();
 		
 	}
@@ -32,6 +39,23 @@ public class DoubleLinkedList<T> {
 			first.lNext = newNode ;
 			first = newNode ;
 		}
+	}
+	
+	public void insertT(T data){
+		
+		DoubleNode<T> newNode = new DoubleNode<>(data) ;
+		
+		if(isEmpty()){
+			first = newNode ;
+			first.rNext = last ;
+			last = newNode ;
+			last.lNext = first ;
+		}else{
+			last.rNext = newNode ;
+			newNode.lNext = last ;
+			last = newNode ;
+		}
+		
 	}
 
 	public boolean isEmpty(){
