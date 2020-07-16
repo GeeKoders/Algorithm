@@ -30,8 +30,11 @@ public class LinkedList<T> {
 //		linkedList.removeT();
 //		linkedList.removeT();
 		
-		linkedList.insertM(6, 7);
 //		linkedList.insertM(6, 7);
+//		linkedList.insertM(6, 7);
+		linkedList.removeM(3);
+		linkedList.removeM(4);
+		linkedList.removeM(6);
 		linkedList.print();
 		
 		
@@ -90,10 +93,10 @@ public class LinkedList<T> {
 				
 				current = current.next ;
 			}
-			
-			if(!findNodeFlag){
-				System.out.println("Target " + target + " not found!");
-			}
+		}
+		
+		if(!findNodeFlag){
+			System.out.println("Target " + target + " not found!");
 		}
 		
 	}
@@ -123,6 +126,36 @@ public class LinkedList<T> {
 				}
 			}
 		}
+		
+
+	}
+	
+	public void removeM(T target){
+		
+		boolean findNodeFlag = false ;
+		
+		if(isEmpty()){
+			System.out.println("No node to remove!");
+		}else{
+			
+			Node<T> current = first ;
+			
+			while(current!=null){
+				
+				if(current.next!=null && current.next.data.equals(target)){
+					current.next = current.next.next ;
+					findNodeFlag = true ;
+				}
+				
+				current = current.next ;
+			}
+			
+		}
+		
+		if(!findNodeFlag){
+			System.out.println("Target " + target + " not found!");
+		}
+		
 	}
 	
 	public void print(){
