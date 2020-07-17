@@ -21,8 +21,11 @@ public class DoubleLinkedList<T> {
 		doubleLinkedList.insertT("3");
 		doubleLinkedList.insertT("4");
 		doubleLinkedList.insertT("5");
-		doubleLinkedList.insertM("6", "3");
-		doubleLinkedList.insertM("7", "8");
+//		doubleLinkedList.insertM("6", "3");
+//		doubleLinkedList.insertM("7", "8");
+		
+		doubleLinkedList.removeH();
+		doubleLinkedList.removeH();
 		doubleLinkedList.print();
 		
 	}
@@ -94,6 +97,16 @@ public class DoubleLinkedList<T> {
 		}
 		
 		
+	}
+	
+	public void removeH(){
+		
+		if(isEmpty()){
+			System.out.println("No node to remove!");
+		}else{
+			first = first.rNext ;
+			first.lNext = last.rNext ;
+		}
 	}
 
 	public boolean isEmpty(){
