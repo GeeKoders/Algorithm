@@ -21,7 +21,7 @@ public class CircularLinkedList<T> {
 		circularLinkedList.insertT("3");
 		circularLinkedList.insertT("4");
 		circularLinkedList.insertT("5");
-		
+		circularLinkedList.insertM("6", "3");
 		circularLinkedList.print();
 	}
 	
@@ -52,11 +52,32 @@ public class CircularLinkedList<T> {
 		}else{
 			last.next = newNode ;
 			last = newNode ;
-			last.next = first ;
+//			last.next = first ;
 		}
 	}
 	
-	
+	public void insertM(T data, T target){
+		
+		CircularNode<T> newNode = new CircularNode(data) ;
+		
+		if(isEmpty()){
+			first = newNode ;
+			last = newNode ;
+			last.next = first ;
+		}else{
+			
+			CircularNode<T> current = first ;
+			
+			while(current!=null){
+				if(current.data.equals(target)){
+					newNode.next = current.next ;
+					current.next = newNode ;
+				}
+				current = current.next ;
+			}
+			last.next = first;
+		}
+	}
 	
 	public void print(){
 		
