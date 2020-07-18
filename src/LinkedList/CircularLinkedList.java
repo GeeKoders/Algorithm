@@ -10,11 +10,17 @@ public class CircularLinkedList<T> {
 		
 		
 		CircularLinkedList circularLinkedList = new CircularLinkedList() ;
-		circularLinkedList.insertH("1");
-		circularLinkedList.insertH("2");
-		circularLinkedList.insertH("3");
-		circularLinkedList.insertH("4");
-		circularLinkedList.insertH("5");
+//		circularLinkedList.insertH("1");
+//		circularLinkedList.insertH("2");
+//		circularLinkedList.insertH("3");
+//		circularLinkedList.insertH("4");
+//		circularLinkedList.insertH("5");
+		
+		circularLinkedList.insertT("1");
+		circularLinkedList.insertT("2");
+		circularLinkedList.insertT("3");
+		circularLinkedList.insertT("4");
+		circularLinkedList.insertT("5");
 		
 		circularLinkedList.print();
 	}
@@ -35,6 +41,21 @@ public class CircularLinkedList<T> {
 		
 	}
 	
+	public void insertT(T data){
+		
+		CircularNode<T> newNode = new CircularNode(data) ;
+		
+		if(isEmpty()){
+			first = newNode ;
+			last = newNode ;
+			last.next = first ;
+		}else{
+			last.next = newNode ;
+			last = newNode ;
+			last.next = first ;
+		}
+	}
+	
 	
 	
 	public void print(){
@@ -44,7 +65,7 @@ public class CircularLinkedList<T> {
 		CircularNode<T> current = first ;
 		while(current!=null){
 			
-			if(count++>=10){
+			if(count++>=12){
 				break ;
 			}
 			
