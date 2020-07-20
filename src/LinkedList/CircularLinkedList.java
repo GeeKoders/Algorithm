@@ -22,7 +22,8 @@ public class CircularLinkedList<T> {
 		circularLinkedList.insertT("4");
 		circularLinkedList.insertT("5");
 //		circularLinkedList.insertM("6", "3");
-		circularLinkedList.removeH();
+//		circularLinkedList.removeH();
+		circularLinkedList.removeT();
 		circularLinkedList.print();
 	}
 	
@@ -88,6 +89,30 @@ public class CircularLinkedList<T> {
 			
 			first = first.next ;
 			last.next = first ;
+		}
+		
+	}
+	
+	public void removeT(){
+		
+		if(isEmpty()){
+			System.out.println("No node to remove!");
+		}else{
+			
+			CircularNode<T> current = first ;
+			CircularNode<T> prev = first ;
+			while(current!=null){
+				
+				prev = current ;
+				current = current.next ;
+				
+				if(current == last){
+					last = prev ;
+					prev.next = first ;
+				}
+				
+			}
+			
 		}
 		
 	}
