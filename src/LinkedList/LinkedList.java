@@ -46,7 +46,6 @@ public class LinkedList<T> {
 		linkedList1.insertT("3");
 		linkedList1.insertT("4");
 		linkedList1.insertT("5");
-
 //		linkedList2.insertT("6");
 //		linkedList2.insertT("7");
 //		linkedList2.insertT("8");
