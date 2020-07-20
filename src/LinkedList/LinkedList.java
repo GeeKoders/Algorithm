@@ -4,7 +4,7 @@ public class LinkedList<T> {
 
 	private Node<T> first ;
 	private Node<T> last ;
-	
+	private int count = 0 ;
 	
 	public static void main(String[] args) {
 
@@ -46,6 +46,8 @@ public class LinkedList<T> {
 		linkedList1.insertT("3");
 		linkedList1.insertT("4");
 		linkedList1.insertT("5");
+		linkedList1.insertT("6");
+		linkedList1.insertT("7");
 		
 //		linkedList2.insertT("6");
 //		linkedList2.insertT("7");
@@ -56,8 +58,10 @@ public class LinkedList<T> {
 //		linkedList1.concatenate(linkedList1, linkedList2);
 //		linkedList1.print();
 		
-		linkedList1.reverse();
-		linkedList1.print();
+//		linkedList1.reverse();
+//		linkedList1.print();
+		
+		linkedList1.getMiddle1(linkedList1.size());
 		
 	}
 	
@@ -77,7 +81,7 @@ public class LinkedList<T> {
 	public void insertT(T data){
 		
 		Node<T> newNode = new Node<T>(data) ;
-		
+		count++ ;
 		if(isEmpty()){
 			first = newNode ;
 			last = newNode ;
@@ -211,6 +215,32 @@ public class LinkedList<T> {
 	
 	public boolean isEmpty(){
 		return first == null ;
+	}
+	
+	public int size(){
+		return count ;
+	}
+	
+	public void getMiddle1(int size){
+		
+		if(size%2 == 0){
+			System.out.println("No middle node!");
+		}else{
+			
+			int middle = (size + 1) / 2 ;
+			
+			Node<T> current = first ;
+			
+			int counter = 1 ;
+			
+			while(counter++<middle){
+				current = current.next ;
+			}
+		
+			System.out.println("middle node:" + current.data);
+			
+		}
+		
 	}
 	
 
