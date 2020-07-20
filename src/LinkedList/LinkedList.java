@@ -46,9 +46,7 @@ public class LinkedList<T> {
 		linkedList1.insertT("3");
 		linkedList1.insertT("4");
 		linkedList1.insertT("5");
-		linkedList1.insertT("6");
-		linkedList1.insertT("7");
-		
+
 //		linkedList2.insertT("6");
 //		linkedList2.insertT("7");
 //		linkedList2.insertT("8");
@@ -61,7 +59,9 @@ public class LinkedList<T> {
 //		linkedList1.reverse();
 //		linkedList1.print();
 		
-		linkedList1.getMiddle1(linkedList1.size());
+//		linkedList1.getMiddle1(linkedList1.size());
+		linkedList1.getMiddle2() ;
+		
 		
 	}
 	
@@ -240,6 +240,21 @@ public class LinkedList<T> {
 			System.out.println("middle node:" + current.data);
 			
 		}
+		
+	}
+	
+	public void getMiddle2(){
+		
+		
+		Node<T> slowerPointer = first ;
+		Node<T> fasterPointer = first ;
+		
+		while(slowerPointer!=null && fasterPointer.next!=null){
+			slowerPointer = slowerPointer.next ;
+			fasterPointer = fasterPointer.next.next ;
+		}
+		
+		System.out.println("Middle node:" + slowerPointer.data);
 		
 	}
 	
