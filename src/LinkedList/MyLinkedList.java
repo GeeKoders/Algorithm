@@ -22,6 +22,7 @@ public class MyLinkedList {
 		obj.print();
 		int param_2 = obj.get(1);
 		System.out.println("param_2:" + param_2);
+		
 	}
 
 	/** Initialize your data structure here. */
@@ -102,29 +103,34 @@ public class MyLinkedList {
 	 */
 	public void addAtIndex(int index, int val) {
 
-		
-		MyNode newNode = new MyNode(val);
-
 		int size = getSize();
 		if (index == size) {
 			addAtTail(val);
 		} else if (index > size) {
 			System.out.println("do nothing");
 		} else {
-			int target = get(index);
-			MyNode current = first;
-			MyNode prev = first;
+			
+			if(index == 0){
+				addAtHead(val) ;
+			}else{
+				
+				MyNode newNode = new MyNode(val);
+				
+				int target = get(index);
+				MyNode current = first;
+				MyNode prev = first;
 
-			while (current != null) {
-				prev = current;
-				current = current.next;
-				if (current != null && current.val == target) {
-					prev.next = newNode;
-					newNode.next = current;
+				while (current != null) {
+					prev = current;
+					current = current.next;
+					if (current != null && current.val == target) {
+						prev.next = newNode;
+						newNode.next = current;
+					}
 				}
 			}
-
 		}
+		count++ ;
 
 	}
 
@@ -132,10 +138,9 @@ public class MyLinkedList {
 	public void deleteAtIndex(int index) {
 
 		int size = getSize();
-
-		if (index == 0) {
+		if (index == 0) { //remove head
 			first = first.next;
-		} else if (index == size) {
+		} else if (index == size - 1) { //remove tail
 
 			MyNode current = first;
 			MyNode prev = first;
@@ -147,17 +152,24 @@ public class MyLinkedList {
 					last = prev;
 				}
 			}
-		} else {
+		}else if(index < 0 || index >= size){
+			System.out.println("index is invalid");
+		}else{ //remove middle
 
 			MyNode current = first;
 			MyNode prev = first;
-			int count = 0;
-			while (count++ < index) {
+			while (current!=null) {
 				prev = current;
 				current = current.next;
+				if(current!=null && current.val == get(index)){
+					prev.next = current.next;
+				}
+				
 			}
-			prev.next = current.next;
+			
 		}
+		
+		count -- ;
 	}
 	
 	public void print(){
