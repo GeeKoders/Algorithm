@@ -1,0 +1,61 @@
+package LinkedList;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class LinkedListCycle {
+
+	/*
+	 * Given a linked list, determine if it has a cycle in it.
+	 * 
+	 * To represent a cycle in the given linked list, we use an integer pos
+	 * which represents the position (0-indexed) in the linked list where tail
+	 * connects to. If pos is -1, then there is no cycle in the linked list.
+	 * 
+	 * Example 1:
+	 * Input: head = [3,2,0,-4], pos = 1
+	 * Output: true
+	 * Explanation: There is a cycle in the linked list, where tail connects to the second node.
+	 * 
+	 * Example 2:
+	 * Input: head = [1,2], pos = 0
+	 * Output: true
+	 * Explanation: There is a cycle in the linked list, where tail connects to the first node.
+	 * 
+	 * Example 3:
+	 * Input: head = [1], pos = -1
+	 * Output: false
+	 * Explanation: There is no cycle in the linked list.
+	 * 
+	 */
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	//time complexity:O(N), space complexity:O(N)
+	public boolean solution1(CycleListNode head) {
+	    Set<CycleListNode> nodesSeen = new HashSet<>();
+	    while (head != null) {
+	        if (nodesSeen.contains(head)) {
+	            return true;
+	        } else {
+	            nodesSeen.add(head);
+	        }
+	        head = head.next;
+	    }
+	    return false;
+	}
+
+}
+
+class CycleListNode {
+	public int val;
+	public CycleListNode next;
+
+	public CycleListNode(int x) {
+		this.val = x;
+		this.next = null;
+	}
+}
