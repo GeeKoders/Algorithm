@@ -47,6 +47,29 @@ public class LinkedListCycle {
 	    }
 	    return false;
 	}
+	
+	//time complexity:O(N), space complexity:O(1)
+	public boolean solution2(CycleListNode head) {
+		
+		CycleListNode slowPoiner = head ;
+		CycleListNode fastPointer = head.next ;
+		
+		if(head == null || head.next == null){
+			return false ;
+		}
+		
+	    while (slowPoiner != fastPointer) {
+	        
+	    	if(fastPointer == null || fastPointer.next == null){
+	    		return false ;
+	    	}
+	    	
+	    	slowPoiner = slowPoiner.next ;
+	    	fastPointer = fastPointer.next.next ;
+	        
+	    }
+	    return true;
+	}
 
 }
 
