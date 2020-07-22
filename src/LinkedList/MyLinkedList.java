@@ -10,18 +10,43 @@ public class MyLinkedList {
 		
 		MyLinkedList obj = new MyLinkedList();
 		
-		obj.addAtHead(1);
+		obj.addAtHead(0);
 		obj.print();
-		obj.addAtTail(3);
+		System.out.println("size:" + obj.getSize());
+		obj.addAtIndex(1, 4);
 		obj.print();
-		obj.addAtIndex(1, 2);
+		System.out.println("size:" + obj.getSize());
+		obj.addAtTail(8);
 		obj.print();
-		int param_1 = obj.get(1);
-		System.out.println("param_1:" + param_1);
-		obj.deleteAtIndex(1);
+		System.out.println("size:" + obj.getSize());
+		obj.addAtHead(5);
 		obj.print();
-		int param_2 = obj.get(1);
-		System.out.println("param_2:" + param_2);
+		System.out.println("size:" + obj.getSize());
+		obj.addAtIndex(4, 3);
+		obj.print();
+		System.out.println("size:" + obj.getSize());
+		obj.addAtTail(0);
+		obj.print();
+		System.out.println("size:" + obj.getSize());
+		obj.addAtTail(5);
+		obj.print();
+		System.out.println("size:" + obj.getSize());
+		obj.addAtIndex(6, 3);
+		obj.print();
+		System.out.println("size:" + obj.getSize());
+		obj.deleteAtIndex(7);
+		obj.print();
+		System.out.println("size:" + obj.getSize());
+		
+		obj.deleteAtIndex(5);
+		obj.print();
+		System.out.println("size:" + obj.getSize());
+		
+//		obj.addAtTail(4);
+//		obj.print();
+		
+//		int param_1 = obj.get(1);
+//		System.out.println("param_1:" + param_1);
 		
 	}
 
@@ -34,6 +59,13 @@ public class MyLinkedList {
 	}
 
 	public int getSize() {
+		
+		MyNode current = first ;
+		while(current!=null){
+			count++ ;
+			current = current.next ;
+		}
+		
 		return count;
 	}
 
@@ -50,8 +82,9 @@ public class MyLinkedList {
 		}
 
 		MyNode current = first;
-		int count = 0;
-		while (count++ < index) {
+		int counter = 0;
+		while (counter < index) {
+			counter++ ; 
 			current = current.next;
 		}
 
@@ -76,8 +109,6 @@ public class MyLinkedList {
 			first = newNode;
 		}
 
-		count++;
-
 	}
 
 	/** Append a node of value val to the last element of the linked list. */
@@ -92,7 +123,6 @@ public class MyLinkedList {
 			last.next = newNode;
 			last = newNode;
 		}
-		count++;
 	}
 
 	/**
@@ -115,7 +145,6 @@ public class MyLinkedList {
 			}else{
 				
 				MyNode newNode = new MyNode(val);
-				
 				int target = get(index);
 				MyNode current = first;
 				MyNode prev = first;
@@ -130,7 +159,7 @@ public class MyLinkedList {
 				}
 			}
 		}
-		count++ ;
+		
 
 	}
 
@@ -161,15 +190,14 @@ public class MyLinkedList {
 			while (current!=null) {
 				prev = current;
 				current = current.next;
+				System.out.println("deleteAtIndex:" + current.val);
+				System.out.println("get(index):" + get(index));
 				if(current!=null && current.val == get(index)){
 					prev.next = current.next;
 				}
 				
 			}
-			
 		}
-		
-		count -- ;
 	}
 	
 	public void print(){
