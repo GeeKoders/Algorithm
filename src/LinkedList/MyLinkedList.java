@@ -4,8 +4,6 @@ public class MyLinkedList {
 
 	private MyNode first, last;
 
-	private int count = 0;
-
 	public static void main(String[] args) {
 		
 		MyLinkedList obj = new MyLinkedList();
@@ -38,9 +36,9 @@ public class MyLinkedList {
 		obj.print();
 		System.out.println("size:" + obj.getSize());
 		
-		obj.deleteAtIndex(5);
-		obj.print();
-		System.out.println("size:" + obj.getSize());
+//		obj.deleteAtIndex(5);
+//		obj.print();
+//		System.out.println("size:" + obj.getSize());
 		
 //		obj.addAtTail(4);
 //		obj.print();
@@ -59,6 +57,8 @@ public class MyLinkedList {
 	}
 
 	public int getSize() {
+		
+		int count = 0 ;
 		
 		MyNode current = first ;
 		while(current!=null){
