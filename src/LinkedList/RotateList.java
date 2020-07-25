@@ -58,5 +58,35 @@ public class RotateList {
 		return head;
 
 	}
+	
+	public ListNode rotateRight2(ListNode head, int k) {
+
+		if(head == null || head.next == null) return head ;
+		
+		ListNode dummy = new ListNode(0) ;
+		dummy.next = head ;
+		
+		ListNode slow = dummy ;
+		ListNode fast = dummy ;
+		
+		int size = 0 ; //Get the total length
+		
+		while(fast != null){
+			size++ ;
+			fast = fast.next ;
+		}
+		
+		//Get the size-k%size th node
+		for(int j=size-k%size; j>0; j--){
+			slow = slow.next ;
+		}
+		
+		if(fast.next != null) fast.next = dummy.next ; // Do the rotation
+		if(dummy.next != null) dummy.next = slow.next ;
+		slow.next = null ;
+		
+		return dummy.next ;
+
+	}
 
 }
