@@ -39,6 +39,15 @@ public class SwapNodesinPairs {
 		 }
 		 return dummy.next ;
 	 }
+	 
+	// O(N) time and space due to recursion
+	    public ListNode swapPairs2(ListNode cur) {
+	        if (cur == null || cur.next == null) return cur;
+	        ListNode suc = cur.next;
+	        cur.next = swapPairs(suc.next);
+	        suc.next = cur;
+	        return suc;
+	    }
 
 }
 
