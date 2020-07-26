@@ -9,6 +9,8 @@ public class Fibonacci {
 	/*
 	 * https://leetcode.com/explore/learn/card/recursion-i/255/recursion-memoization/1661/
 	 * 
+	 * solution: https://leetcode.com/articles/fibonacci-number/
+	 * 
 	 * The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
 	 * F(0) = 0,   F(1) = 1
 	 * F(N) = F(N - 1) + F(N - 2), for N > 1.
@@ -30,6 +32,8 @@ public class Fibonacci {
 	 * Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 	 * 
 	 */
+	
+	private Integer[] cache = new Integer[31];
 	
 	public static void main(String[] args) {
 
@@ -74,5 +78,23 @@ public class Fibonacci {
 		return result;
 
 	}
+	// time complexity: O(N), space complexity: O(N)
+	public int fib3(int N) {
+		
+        if (N <= 1) {
+            return N;
+        }
+        cache[0] = 0;
+        cache[1] = 1;
+        return memoize(N);
+    }
+
+    public int memoize(int N) {
+      if (cache[N] != null) {
+          return cache[N];
+      }
+      cache[N] = memoize(N-1) + memoize(N-2);
+      return memoize(N);
+    }
 
 }
