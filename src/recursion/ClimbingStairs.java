@@ -45,5 +45,19 @@ public class ClimbingStairs {
         if(n < 2) return 1 ;
         return climb_Stairs(1, n - 1) + climb_Stairs(2, n - 2);
     }
+    
+    
+    public int climbStairs2(int n) {
+        return climb_Stairs2(0, n);
+    }
+    public int climb_Stairs2(int i, int n) {
+        if (i > n) {
+            return 0;
+        }
+        if (i == n) {
+            return 1;
+        }
+        return climb_Stairs2(i + 1, n) + climb_Stairs2(i + 2, n);
+    }
 
 }
