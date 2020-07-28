@@ -1,5 +1,8 @@
 package LinkedList;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class FlattenAMultilevelDoublyLinkedList {
 
 	/*
@@ -56,6 +59,41 @@ public class FlattenAMultilevelDoublyLinkedList {
         }
         return head;
     }
+	// https://www.youtube.com/watch?v=ddB_HUMctUE
+	public Node flatten2(Node head) {
+		
+		if(head == null) return null ;
+		
+		Deque<Node> s = new ArrayDeque<>() ;
+		Node cur = head ;
+		
+		while(cur != null){
+			
+			if(cur.child != null){
+				if(cur.next != null){
+					s.offerLast(cur.next) ;
+				}
+				
+				cur.next = cur.child ;
+				cur.child.prev = cur ;
+				cur.child = null ;
+				
+			}else{
+				if(cur.next == null && !s.isEmpty()){
+					cur.next = s.pollLast() ;
+					cur.next.prev = cur ;
+				}
+				
+			}
+			
+			cur = cur.next ;
+			
+			
+		}
+		
+		return head ;
+		
+	}
 	
 }
 
