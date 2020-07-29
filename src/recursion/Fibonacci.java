@@ -40,7 +40,7 @@ public class Fibonacci {
 		Fibonacci fibonacci = new Fibonacci();
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Input your number:");
-		int result = fibonacci.f(sc.nextInt());
+		int result = fibonacci.fib4(sc.nextInt());
 		System.out.println(result);
 
 	}
@@ -95,6 +95,17 @@ public class Fibonacci {
       }
       cache[N] = memoize(N-1) + memoize(N-2);
       return memoize(N);
+    }
+    
+    //tail recursion
+    //https://notfalse.net/9/recursion
+    public int fib4(int n) {
+        return fib4(n, 0, 1);
+    }
+
+    private int fib4(int n, int a, int b) {
+        if (n == 0) return a;
+        return fib4(n - 1, b, a + b);
     }
 
 }
