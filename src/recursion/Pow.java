@@ -46,5 +46,25 @@ public class Pow {
         return val;
 		
 	}
+	
+	//optimal solution
+	public double myPow3(double x, int n){
+		
+		double res = helper(x, n);
+		if(n < 0) return 1/res ;
+		return res ;
+	}
+
+	public double helper(double x, int n) {
+		
+		if(n == 0) return 1 ;
+		if(n == 1) return x ;
+		
+		double half = helper(x, n/2) ;
+		if(n%2 == 0) return half * half ;
+		return x * half * half ; 
+		
+		
+	}
 
 }
