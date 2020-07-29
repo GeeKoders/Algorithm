@@ -36,5 +36,15 @@ public class Pow {
         
         return 0 ;
     }
+	
+	//brute force time exceed limit
+	public double myPow2(double x, int n) {
+		
+		double val = 1.0;
+        for (int i = 0; i < Math.abs(n); i++) val *= x;
+        if (n < 0) return 1/val;
+        return val;
+		
+	}
 
 }
