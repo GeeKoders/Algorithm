@@ -49,5 +49,24 @@ public class RotateArray {
 		}
 
 	}
+	//time complexity: O(N*k), space complexity: O(1)
+	public void rotate2(int[] nums, int k) {
+		
+		int tmp, previous ;
+		
+		for(int i=0; i<k; i++){
+			
+			previous = nums[nums.length - 1] ;
+			
+			for(int j=0; j<nums.length; j++){
+				
+				tmp = nums[j] ;
+				nums[j] = previous ;
+				previous = tmp ;
+				
+			}
+			
+		}
+	}
 
 }
