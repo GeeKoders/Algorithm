@@ -4,7 +4,7 @@ public class ReverseWordsInAString {
 
 	public static void main(String[] args) {
 		ReverseWordsInAString reverseWordsInAString = new ReverseWordsInAString() ;
-		String result = reverseWordsInAString.reverseWords2("a good   example") ;
+		String result = reverseWordsInAString.reverseWords3("a good   example") ;
 		System.out.println("result:" + result);
 	}
 	// wrong answer
@@ -56,6 +56,28 @@ public class ReverseWordsInAString {
         }
         
         return result.trim() ;
+    }
+    // runtime beats 16.45%
+    public String reverseWords3(String s) {
+        
+    	if(s.isEmpty()) return "" ;
+    	
+    	String[] arr = s.split(" ");
+    	StringBuilder sb = new StringBuilder() ;
+        
+    	for(String item: arr){
+    		System.out.println("item:" + item);
+    	}
+    	
+    	for(int i=arr.length-1; i>=0 ; i--){
+    		if(!arr[i].isEmpty()){
+    			sb.append(arr[i]).append(" ") ;
+    		}
+    	}
+    	
+    	return sb.length() == 0 ? "" : sb.substring(0, sb.length()-1) ;
+    	
+    	
     }
 
 }
