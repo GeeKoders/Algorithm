@@ -58,5 +58,13 @@ public class ReverseWordsInAStringIII {
         charArr[j] = tmp ;
         
     }
+    //Time complexity : O(n), Space complexity : O(n)O(n)
+    public String reverseWords2(String s) {
+        String words[] = s.split(" ");
+        StringBuilder res=new StringBuilder();
+        for (String word: words)
+            res.append(new StringBuffer(word).reverse().toString() + " ");
+        return res.toString().trim();
+    }
 
 }
