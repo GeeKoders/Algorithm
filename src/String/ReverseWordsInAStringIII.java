@@ -1,5 +1,7 @@
 package String;
 
+import java.util.ArrayList;
+
 public class ReverseWordsInAStringIII {
 
 	/*
@@ -58,13 +60,41 @@ public class ReverseWordsInAStringIII {
         charArr[j] = tmp ;
         
     }
-    //Time complexity : O(n), Space complexity : O(n)O(n)
+    //Time complexity : O(n), Space complexity : O(n)
     public String reverseWords2(String s) {
         String words[] = s.split(" ");
         StringBuilder res=new StringBuilder();
         for (String word: words)
             res.append(new StringBuffer(word).reverse().toString() + " ");
         return res.toString().trim();
+    }
+    //Without using pre-defined split and reverse function
+    //Time complexity : O(n), Space complexity : O(n)
+    public String reverseWords3(String s) {
+        String words[] = split(s);
+        StringBuilder res=new StringBuilder();
+        for (String word: words)
+            res.append(reverse(word) + " ");
+        return res.toString().trim();
+    }
+    public String[] split(String s) {
+        ArrayList < String > words = new ArrayList < > ();
+        StringBuilder word = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
+                words.add(word.toString());
+                word = new StringBuilder();
+            } else
+                word.append( s.charAt(i));
+        }
+        words.add(word.toString());
+        return words.toArray(new String[words.size()]);
+    }
+    public String reverse(String s) {
+      StringBuilder res=new StringBuilder();
+        for (int i = 0; i < s.length(); i++)
+            res.insert(0,s.charAt(i));
+        return res.toString();
     }
 
 }
