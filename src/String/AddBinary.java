@@ -29,7 +29,8 @@ public class AddBinary {
 	public static void main(String[] args) {
 		
 		AddBinary addBinary = new AddBinary() ;
-		System.out.println(addBinary.addBinary1("1001", "1101")) ;
+//		System.out.println(addBinary.addBinary1("1001", "1101")) ;
+		System.out.println(addBinary.addBinary2("0101", "1010")) ;
 	}
 	
 	/*
@@ -73,7 +74,7 @@ public class AddBinary {
         
         return sb.reverse().toString();
     }
-	
+	//https://ithelp.ithome.com.tw/articles/10213271
 	public String addBinary2(String a, String b) {
         StringBuilder sb = new StringBuilder();
         int i = a.length() - 1;
