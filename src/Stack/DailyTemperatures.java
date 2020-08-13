@@ -41,5 +41,33 @@ public class DailyTemperatures {
 
 		return result;
 	}
+	
+	public int[] dailyTemperatures2(int[] T) {
+        
+        for(int i=0; i<T.length; i++){
+            
+            int count = 0 ;
+            
+            for(int j=i+1; j<T.length ; j++){
+                      
+                if(T[i] < T[j]){
+                    T[i] = j - i ;
+                    break ;
+                }else{
+                    count++ ;
+                    
+                    if(i+count == T.length - 1){
+                        T[i] = 0;
+                    }
+                }
+                
+            }
+        
+        }
+        
+        T[T.length - 1] = 0 ;
+        
+        return T ;
+    }
 
 }
