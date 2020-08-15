@@ -2,6 +2,7 @@ package BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class BinaryTreeInorderTraversal {
 
@@ -51,6 +52,33 @@ public class BinaryTreeInorderTraversal {
         if(root.right != null){
             traverse(root.right, result) ;
         }
+        
+    }
+    
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        
+        List<Integer> result = new ArrayList<Integer>() ;
+        
+        Stack<TreeNode> stack = new Stack<>() ;
+        
+        TreeNode current = root ;
+        
+        if(root == null) return null ;
+        
+        while(current!=null || !stack.isEmpty()){
+            
+            while(current != null){
+                stack.push(current) ;
+                current = current.left ;
+            }
+            
+            current = stack.pop() ;
+            result.add(current.val) ;
+            current = current.right ;
+                
+        }
+        
+        return result ;
         
     }
 	
