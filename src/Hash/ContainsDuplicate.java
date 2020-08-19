@@ -1,5 +1,6 @@
 package Hash;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,6 +31,7 @@ public class ContainsDuplicate {
 
 	}
 	//Time complexity:O(N^2), Space complexity: O(1)
+	//time exceed limited
 	public boolean containsDuplicate(int[] nums) {
 	     
         for(int i=0; i<nums.length; i++){
@@ -58,5 +60,13 @@ public class ContainsDuplicate {
         return false ;
         
     }
+	//Time complexity:O(N*logN), Space complexity: O(1)
+	public boolean containsDuplicate3(int[] nums) {
+	    Arrays.sort(nums);
+	    for (int i = 0; i < nums.length - 1; ++i) {
+	        if (nums[i] == nums[i + 1]) return true;
+	    }
+	    return false;
+	}
 
 }
