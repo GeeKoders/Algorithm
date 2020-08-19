@@ -52,7 +52,7 @@ public class Matrix {
 		
 		int [][] dirs ={{0,1}, {0, -1},{1, 0},{-1, 0}} ;
 		int r = matrix.length ;
-		int c = matrix[c].length ;
+		int c = matrix[0].length ;
 		
 		int[][] visited = new int[r][c] ;
 		
@@ -84,7 +84,7 @@ public class Matrix {
 					int x = temp[0] + dir[0] ;
 					int y = temp[1] + dir[1] ;
 					
-					if(x>=0 && x<r && y>=0 && y<c && visited[x][y] = 0){
+					if(x>=0 && x<r && y>=0 && y<c && visited[x][y] == 0){
 						visited[x][y] = 1 ;
 						matrix[x][y] = step ;
 						q.add(new int[]{x, y}) ;
