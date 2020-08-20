@@ -1,6 +1,7 @@
 package Hash;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class SingleNumber {
 
@@ -40,5 +41,26 @@ public class SingleNumber {
         }
         return -1 ;
     }
+	
+	 public int singleNumber2(int[] nums) {
+	        
+	        Arrays.sort(nums) ;
+	        
+	        Stack<Integer> stack = new Stack<>() ;
+	        
+	        for(int i=0; i<nums.length; i++){
+	            
+	            if(stack.contains(nums[i])){
+	                stack.pop() ;
+	            }else{
+	                stack.push(nums[i]) ;
+	            }
+	            
+	        }
+	        
+	        return stack.pop() ;
+	        
+	        
+	    }
 
 }
