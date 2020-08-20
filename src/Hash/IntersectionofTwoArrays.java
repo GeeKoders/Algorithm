@@ -1,7 +1,10 @@
 package Hash;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.Stack;
 
 public class IntersectionofTwoArrays {
 
@@ -30,7 +33,7 @@ public class IntersectionofTwoArrays {
 
 	}
 	
-	//your runtime beats 5.43%
+	//your runtime beats 5.43% of java submissions
 	public int[] intersection(int[] nums1, int[] nums2) {
         
         List<Integer> list = new ArrayList<>() ;
@@ -52,6 +55,36 @@ public class IntersectionofTwoArrays {
         for(int i=0; i<list.size(); i++){
         	result[i] = list.get(i) ;
         }
+        return result ;
+        
+    }
+	
+	//your runtime beats 5.43% of java submissions
+	public int[] intersection2(int[] nums1, int[] nums2) {
+       
+        
+        Stack<Integer> stack1 = new Stack<>() ;
+        Set<Integer> set = new HashSet<>() ;
+        
+        
+        for(int i=0; i<nums1.length; i++){
+            if(!stack1.contains(nums1[i])){
+                stack1.push(nums1[i]) ;
+            }
+        }
+        
+        for(int i=0; i<nums2.length; i++){
+            if(stack1.contains(nums2[i])){
+                set.add(nums2[i]) ;
+            }
+            
+        }
+        
+        int [] result = new int[set.size()] ;
+        int count = 0 ;
+        for(Integer item: set){
+			result[count++] = item ;
+		}
         
         return result ;
         
