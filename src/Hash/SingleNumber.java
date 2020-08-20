@@ -1,6 +1,8 @@
 package Hash;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 public class SingleNumber {
@@ -42,7 +44,7 @@ public class SingleNumber {
         return -1 ;
     }
 	
-	 public int singleNumber2(int[] nums) {
+	public int singleNumber2(int[] nums) {
 	        
 	        Arrays.sort(nums) ;
 	        
@@ -61,6 +63,31 @@ public class SingleNumber {
 	        return stack.pop() ;
 	        
 	        
-	    }
+	}
+
+	public int singleNumber3(int[] nums) {
+        
+        //Arrays.sort(nums) ;
+        
+        Set<Integer> set = new HashSet<>() ;
+        
+        for(int i=0; i<nums.length; i++){
+            
+            if(set.contains(nums[i])){
+                set.remove(nums[i]) ;
+            }else{
+                set.add(nums[i]) ;
+            }
+            
+        }
+        
+        for(int item: set){
+        	return item ;
+        }
+        
+        return -1 ;
+        
+    }
+	
 
 }
