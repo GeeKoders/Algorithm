@@ -87,6 +87,26 @@ public class IsomorphicStrings {
 	        
 	        return true ;
 	        
-	    }
+	}
+	//better solution
+	public boolean isIsomorphic3(String s, String t) {
+        Map<Character, Character> map = new HashMap<>();
+        char[] sa = s.toCharArray();
+        char[] ta = t.toCharArray();
+        for (int i = 0; i < sa.length; i++) {
+            if (!map.containsKey(sa[i])) {
+                if (map.containsValue(ta[i])) {  // "ab" "ca"
+                    return false;
+                }
+                map.put(sa[i], ta[i]);
+            } else {
+                if (map.get(sa[i]) != ta[i]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+  }
+	
 
 }
