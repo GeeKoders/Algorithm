@@ -20,8 +20,15 @@ public class TwoSum {
 	 */
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		TwoSum twoSum = new TwoSum() ;
+		int result[] = twoSum.twoSum3(new int[]{2, 7, 11, 15}, 9) ;
+		
+		for(int item: result){
+			System.out.println(item);
+		}
+		
+		
 	}
 	// your runtime beats 5.08% of java submissions
 	public int[] twoSum(int[] nums, int target) {
@@ -53,6 +60,24 @@ public class TwoSum {
             while(j < nums.length){
                 if(i!= j && map.get(i) == nums[j++]) return new int[]{i, j} ;
             }
+        }
+        
+        
+        return new int[]{} ;
+    }
+	//O(N), O(N)
+	public int[] twoSum3(int[] nums, int target) {
+        
+        Map<Integer, Integer> map = new HashMap<>() ;
+        
+        for(int i=0; i<nums.length; i++){
+            map.put(nums[i], i) ;
+        }
+        
+        
+        for(int i=0; i<nums.length; i++){
+            int complement = target - nums[i] ;
+            if(map.containsKey(complement) && map.get(complement) != i) return new int[]{i, map.get(complement)} ;
         }
         
         
