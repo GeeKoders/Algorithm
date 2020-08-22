@@ -1,5 +1,8 @@
 package Hash;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class IsomorphicStrings {
 
 	
@@ -57,5 +60,33 @@ public class IsomorphicStrings {
         return true ;
         
     }
+	
+	
+	public boolean isIsomorphic2(String s, String t) {
+        
+		 if(s.length() != t.length()) return false ;
+	        
+	        char[] sa = s.toCharArray() ;
+	        char[] ta = t.toCharArray() ;
+	        
+	        Map<Character, Character> map = new HashMap<>() ;
+	        
+	        for(int i=0; i<sa.length; i++){
+	         
+	            if(map.containsKey(sa[i])){
+	                if(ta[i] != map.get(sa[i])){
+	                    return false ;
+	                }
+	                
+	            }else{
+	                
+	                if(map.containsValue(ta[i])) return false ;
+	                map.put(sa[i], ta[i]) ;
+	            }
+	        }
+	        
+	        return true ;
+	        
+	    }
 
 }
