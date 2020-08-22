@@ -1,5 +1,8 @@
 package Hash;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TwoSum {
 
 	/*
@@ -20,7 +23,7 @@ public class TwoSum {
 		// TODO Auto-generated method stub
 
 	}
-	
+	// your runtime beats 5.08% of java submissions
 	public int[] twoSum(int[] nums, int target) {
         
         for(int i=0; i<nums.length; i++){
@@ -31,6 +34,27 @@ public class TwoSum {
                 }               
             }
         }
+        
+        return new int[]{} ;
+    }
+	// time exceed limits
+	public int[] twoSum2(int[] nums, int target) {
+        
+        Map<Integer, Integer> map = new HashMap<>() ;
+        
+        for(int i=0; i<nums.length; i++){
+            map.put(i, target - nums[i]) ;
+        }
+        
+        int j = 0 ;
+        
+        for(int i=0; i<nums.length; i++){
+            
+            while(j < nums.length){
+                if(i!= j && map.get(i) == nums[j++]) return new int[]{i, j} ;
+            }
+        }
+        
         
         return new int[]{} ;
     }
