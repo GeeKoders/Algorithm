@@ -1,7 +1,10 @@
 package Hash;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class FirstUniqueCharacterinaString {
 
@@ -70,5 +73,25 @@ public class FirstUniqueCharacterinaString {
 		
 		return -1 ;
 	}
+	
+	
+	public int firstUniqChar3(String s) {
+		Map<Character, Integer> map = new LinkedHashMap<>();
+        Set<Character> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (set.contains(s.charAt(i))) {
+                map.remove(s.charAt(i));
+            } else {
+                map.put(s.charAt(i), i);
+                set.add(s.charAt(i));
+            }
+        }
+        
+        // for(Map.Entry<Character, Integer> entry: map.entrySet()){
+        //     return entry.getValue() ;
+        // }
+        //return -1 ;
+        return map.size() == 0 ? -1 : map.entrySet().iterator().next().getValue();
+    }
 
 }
