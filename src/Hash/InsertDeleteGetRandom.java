@@ -77,14 +77,16 @@ class RandomizedSet {
         Random rand = new Random() ;
         int index = rand.nextInt(set.size()) ;
         
-        List<Integer> list = new ArrayList<>() ;
+//        List<Integer> list = new ArrayList<>() ;
+//        
+//        for(Integer item: set){
+//            list.add(item) ;
+//        }
         
-        for(Integer item: set){
-            list.add(item) ;
-        }
+        Integer[] result = set.toArray(new Integer[0]);
         
         
-        return list.get(index) ;
+        return result[index] ;
         
     }
     
