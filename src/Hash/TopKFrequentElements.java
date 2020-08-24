@@ -30,7 +30,18 @@ public class TopKFrequentElements {
 	 * You can return the answer in any order.
 	 * 
 	 */
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
+		
+		TopKFrequentElements topKFrequentElements = new TopKFrequentElements() ;
+		List<Integer> result = topKFrequentElements.topKFrequent2(new int[]{1,1,1,2,2,3,4,4}, 2) ;
+		
+		
+		for(int item: result){
+			System.out.println(item);
+		}
+		
+		
 		
 	}
 	
@@ -74,6 +85,47 @@ public class TopKFrequentElements {
        
         return result ;
     }
+	//reference: https://leetcode.com/explore/learn/card/hash-table/187/conclusion-hash-table/1133/discuss/81602/Java-O(n)-Solution-Bucket-Sort
+	@SuppressWarnings("unchecked")
+	public List<Integer> topKFrequent2(int[] nums, int k) {
+
+		List<Integer>[] bucket = new List[nums.length + 1];
+		Map<Integer, Integer> frequencyMap = new HashMap<Integer, Integer>();
+
+		for (int n : nums) {
+			frequencyMap.put(n, frequencyMap.getOrDefault(n, 0) + 1);
+		}
+
+		for (int key : frequencyMap.keySet()) {
+			int frequency = frequencyMap.get(key);
+			if (bucket[frequency] == null) {
+				bucket[frequency] = new ArrayList<>();
+			}
+			bucket[frequency].add(key);
+		}
+		
+		System.out.println("test:" + bucket[2]);
+
+		/*
+		 * {frequency:key
+		 * 	3: [1]
+		 *  2: [2, 4]
+		 *  1: [3]
+		 * }
+		 * 
+		 */
+		
+		List<Integer> res = new ArrayList<>();
+
+		for (int pos = bucket.length - 1; pos >= 0 && res.size() < k; pos--) {
+			if (bucket[pos] != null) {
+				res.addAll(bucket[pos]);
+			}
+		}
+		return res;
+	}
+	
+	
 	
 
 }
