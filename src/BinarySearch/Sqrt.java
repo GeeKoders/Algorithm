@@ -53,6 +53,22 @@ public class Sqrt {
 		return (int) start ;
 		
     }
+	//https://reference:leetcode.com/explore/learn/card/binary-search/125/template-i/950/discuss/25198/3-JAVA-solutions-with-explanation
+	public int mySqrt3(int x) {
+		
+		if (x == 0) return 0;
+		int start = 1, end = x;
+		while (start < end) { 
+			int mid = start + (end - start) / 2;
+			if (mid <= x / mid && (mid + 1) > x / (mid + 1))// Found the result
+				return mid; 
+			else if (mid > x / mid)// Keep checking the left part
+				end = mid;
+			else
+				start = mid + 1;// Keep checking the right part
+		}
+		return start;
+	}
 	
 	
 }
