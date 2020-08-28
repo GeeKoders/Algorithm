@@ -7,7 +7,7 @@ public class BinarySearchTemplateIII {
 
 	}
 	
-	int binarySearch(int[] nums, int target) {
+	public int binarySearch(int[] nums, int target) {
 	    if (nums == null || nums.length == 0)
 	        return -1;
 
@@ -29,5 +29,5 @@ public class BinarySearchTemplateIII {
 	    if(nums[left] == target) return left;
 	    if(nums[right] == target) return right;
 	    return -1;
-
+	}
 }
