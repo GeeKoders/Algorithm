@@ -36,5 +36,18 @@ public class ValidPerfectSquare {
         return false ;
         
     }
+	
+	public boolean isPerfectSquare2(int num) {
+        
+        int i = 1 ;
+        int rediual = num ;
+        while(rediual > 0){
+            rediual = rediual - i ; 
+            i+=2 ;
+        }
+        if(rediual == 0) return true ;
+        return false ;
+        
+    }
 
 }
