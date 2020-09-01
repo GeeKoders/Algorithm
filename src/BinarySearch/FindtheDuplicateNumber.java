@@ -75,5 +75,23 @@ public class FindtheDuplicateNumber {
         return list.get(0) ;
         
     }
+	
+	public int findDuplicate3(int[] nums) {
+        
+        int []res = new int[nums.length] ;
+        
+        for(int item : nums){
+            ++res[item] ;
+        }
+        
+        for(int i=0; i<res.length; i++){
+        
+            if(res[i] > 1){
+                return i ;
+            }
+        }
+        
+        return -1 ;
+    }
 
 }
