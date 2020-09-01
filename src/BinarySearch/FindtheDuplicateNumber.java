@@ -1,6 +1,10 @@
 package BinarySearch;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class FindtheDuplicateNumber {
@@ -47,6 +51,28 @@ public class FindtheDuplicateNumber {
         
         return -1 ;
         
+        
+    }
+	
+	public int findDuplicate2(int[] nums) {
+        
+        Map<Integer, Integer> map = new HashMap<>() ;
+        
+        List<Integer> list = new ArrayList<>() ;
+        
+        for(int i=0; i<nums.length; i++){
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1) ;
+        }
+        
+        for(int i=0; i<nums.length; i++){
+            
+            if(map.get(nums[i]) != null && map.get(nums[i]) > 1){
+                list.add(nums[i]) ;
+            }
+            
+        }
+        
+        return list.get(0) ;
         
     }
 
