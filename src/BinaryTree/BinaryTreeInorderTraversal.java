@@ -81,6 +81,25 @@ public class BinaryTreeInorderTraversal {
         return result ;
         
     }
+    
+    private List<Integer> res ;
+    
+    public List<Integer> inorderTraversal3(TreeNode root) {
+        
+        res = new ArrayList<>() ;
+        traversal(root) ;
+        return res ;
+    }
+    
+    public void traversal(TreeNode curr){
+        
+        if(curr == null) return ;
+        
+        traversal(curr.left) ;
+        res.add(curr.val) ;
+        traversal(curr.right) ;
+            
+    }
 	
 }
 
