@@ -42,6 +42,15 @@ public class SearchinaBinarySearchTree {
 		return val < root.val? searchBST(root.left, val) : searchBST(root.right, val) ; 
 		
     }
+	
+	public TreeNode searchBST2(TreeNode root, int val) {
+		
+		while(root!=null && root.val != val){
+			root = val < root.val ? root.left: root.right;
+		}
+		return root ;
+		
+	}
 }
 
 class TreeNode {
