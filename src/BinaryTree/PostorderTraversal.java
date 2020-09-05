@@ -8,8 +8,14 @@ public class PostorderTraversal {
 
 	//reference: https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/930/discuss/45551/Preorder-Inorder-and-Postorder-Iteratively-Summarization
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		List<Integer> list = new ArrayList<>() ;
+
+		list.add(1) ;
+		list.add(0, 2) ;
+		System.out.println(list.get(0));
+		System.out.println(list.get(1));
+		
 	}
 	
 	public List<Integer> postorderTraversal(TreeNode root) {
