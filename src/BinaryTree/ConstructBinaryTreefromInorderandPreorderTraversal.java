@@ -1,6 +1,6 @@
 package BinaryTree;
 
-public class ConstructBinaryTreefromInorderandPostorderTraversal {
+public class ConstructBinaryTreefromInorderandPreorderTraversal {
 
 	/*
 	 * Given preorder and inorder traversal of a tree, construct the binary tree.
