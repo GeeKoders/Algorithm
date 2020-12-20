@@ -1,5 +1,7 @@
 package BinarySearchTree;
 
+import java.util.Stack;
+
 public class ValidateBinarySearchTree {
 
 	class TreeNode {
@@ -40,7 +42,7 @@ public class ValidateBinarySearchTree {
 	}
 	
 	
-	//Aproach 2: Inorder Traversal
+	// Approach 2: Inorder Traversal
 	// Time: O(N)
 	// Space: O(N)
 	private Integer prev ;
@@ -56,5 +58,34 @@ public class ValidateBinarySearchTree {
 		prev = root.val ;
 		return inorder(root.right) ;
 	}
+	
+	// Approach 3: use Stack
+	// Time: O(N)
+	// Space: O(N)
+	public boolean isValidBST3(TreeNode root) {
+
+		Stack<TreeNode> stack = new Stack<>() ;
+		
+		while(!stack.isEmpty() || root !=null){
+			
+			while(root != null){
+				stack.push(root) ;
+				root = root.left ;
+			}
+			
+			root = stack.pop();
+			// If next element in inorder traversal
+            // is smaller than the previous one
+            // that's not BST.
+			
+			if(prev != null && root.val <= prev){
+				return false ;
+			}
+			prev = root.val ;
+			root = root.right ;
+		}
+		return true ;
+	}
+	
 	
 }
