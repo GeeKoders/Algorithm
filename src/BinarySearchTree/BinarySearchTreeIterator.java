@@ -50,7 +50,8 @@ public class BinarySearchTreeIterator {
         inorder(root) ;        
         
     }
-    
+    // time complexity: O(N)
+    // space complexity: O(N)
     private void inorder(TreeNode root){
         
         if (root == null) return ;
@@ -61,11 +62,11 @@ public class BinarySearchTreeIterator {
         
         
     }
-    
+    // O(1)
     public int next() {
         return list.get(++index) ;
     }
-    
+    // O(1)
     public boolean hasNext() {
         return index+1 < list.size() ;
     }
