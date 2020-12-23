@@ -39,5 +39,43 @@ public class InsertIntoBST {
         }
         return root ;   
     }
+    
+    // approach2: iteration
+    
+    // time complexity: O(logN) in the average case, and O(N) in the worst case.
+    // space complexity: O(1)
+    public TreeNode insertIntoBST2(TreeNode root, int val) {
+    	
+    	TreeNode curr = root ;
+    	
+    	while(curr != null){
+    		
+    		if(val > curr.val){
+    			
+    			if(curr.right == null){
+    				
+    				curr.right = new TreeNode(val) ;
+    				
+    				return root ;
+    			}else{
+    				curr = curr.right ;
+    			}
+    			
+    			
+    		}else{
+    			
+    			if(curr.left == null){
+    				curr.left = new TreeNode(val) ;
+    				return root ;
+    			}else{
+    				curr = curr.left ;
+    			}
+    		}
+    		
+    	}
+    	
+    	return new TreeNode(val) ;
+    	
+    }
 	
 }
