@@ -27,8 +27,9 @@ public class BinarySearchTree {
 		bst.insertTree(23);
 		
 		bst.inorderTraversal() ;
+		System.out.println();
 		System.out.println("Max:" + bst.getMax());
-//		System.out.println("Min:" + bst.getMin());
+		System.out.println("Min:" + bst.getMin());
 		
 	}
 	
@@ -43,7 +44,7 @@ public class BinarySearchTree {
 		if(root == null) return null ;
 		
 		Tree curr = root ;
-		while(curr != null){
+		while(curr.left != null){
 			curr = curr.left ;
 		}
 		
@@ -55,7 +56,7 @@ public class BinarySearchTree {
 		if(root == null) return null ;
 		
 		Tree curr = root ;
-		while(curr != null){
+		while(curr.right != null){
 			curr = curr.right ;
 		}
 		
