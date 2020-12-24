@@ -30,7 +30,12 @@ public class BinarySearchTree {
 		System.out.println();
 		System.out.println("Max:" + bst.getMax());
 		System.out.println("Min:" + bst.getMin());
-		
+		System.out.println("root" + bst.getRoot().val);
+		System.out.println(bst.getPredecessor(bst.getRoot().left)); //23
+		System.out.println(bst.getSuccessor(bst.getRoot().right)); //55
+		bst.preorderTraversal() ;
+		System.out.println();
+		bst.postorderTraversal();
 	}
 	
 	private Tree root ;
@@ -44,8 +49,8 @@ public class BinarySearchTree {
 		if(root == null) return null ;
 		
 		Tree curr = root ;
-		while(curr.left != null){
-			curr = curr.left ;
+		while(curr.right != null){
+			curr = curr.right ;
 		}
 		
 		return curr.val ;
@@ -56,8 +61,8 @@ public class BinarySearchTree {
 		if(root == null) return null ;
 		
 		Tree curr = root ;
-		while(curr.right != null){
-			curr = curr.right ;
+		while(curr.left != null){
+			curr = curr.left ;
 		}
 		
 		return curr.val ;
@@ -86,7 +91,7 @@ public class BinarySearchTree {
 		
 	}
 	
-	public void preorderTraversal(Tree root){
+	public void preorderTraversal(){
 		
 		if(root == null) return ;
 		
@@ -98,7 +103,7 @@ public class BinarySearchTree {
 		
 		Tree curr = root; 
 		
-		System.out.print(curr + "-->");
+		System.out.print(curr.val + "-->");
 		
 		if(curr.left != null){
 			preorder(curr.left) ;
@@ -109,7 +114,7 @@ public class BinarySearchTree {
 		}
 	}
 	
-	public void postorderTraversal(Tree root){
+	public void postorderTraversal(){
 		
 		if(root == null) return ;
 		
@@ -129,7 +134,7 @@ public class BinarySearchTree {
 			postorder(curr.right) ;
 		}
 		
-		System.out.print(curr + "-->");
+		System.out.print(curr.val + "-->");
 		
 	}
 	
@@ -154,9 +159,8 @@ public class BinarySearchTree {
 		Tree curr = root ;
 		
 		if(curr.right != null){
-			return getSuccessor(curr.right) ;
+			return getPredecessor(curr.right) ;
 		}
-		
 		return curr.val ;
 	}
 	
