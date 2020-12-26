@@ -28,8 +28,8 @@ public class DeleteNodeInBST {
 	 *
 	 * 91 / 91 test cases passed.
 	   Status: Accepted
-	   Runtime: 2 ms
-	   Memory Usage: 46.6 MB
+	   Runtime: 2 ms faster than 100.00% of Java online submissions for Delete Node in a BST.
+	   Memory Usage: 39.3 MB, less than 71.80% of Java online submissions for Delete Node in a BST.
 	 *
 	 */
 	
@@ -93,8 +93,8 @@ public class DeleteNodeInBST {
 
 		TreeNode curr = root;
 
-		if (curr.right != null) {
-			return getPredecessor(curr.right);
+		while(curr.right != null){
+			curr = curr.right ;
 		}
 
 		return curr;
