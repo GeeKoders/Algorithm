@@ -47,4 +47,40 @@ public class LowestCommonAncestorofBST {
         return root ;
         
     }
+	
+	/*
+	 * 
+		27 / 27 test cases passed.
+		Status: Accepted
+		Runtime: 3 ms
+		Memory Usage: 40.1 MB
+	 * 
+	 * iteratively
+	 * Time complexity: O(N)
+	 * Space complexity: O(1)
+	 * 
+	 * 
+	 */
+	
+	public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        
+        
+		TreeNode curr = root ;
+        
+        while(curr != null){
+			if(p.val < curr.val && q.val < curr.val){
+	            curr = curr.left ; 
+	        }else if(p.val > curr.val && q.val > curr.val){
+	        	curr = curr.right ;
+	        }else{
+                return curr ;
+            }
+	        
+	         
+		}
+		
+		return null ;
+        
+    }
+	
 }
