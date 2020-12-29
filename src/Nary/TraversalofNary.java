@@ -39,6 +39,13 @@ public class TraversalofNary {
 	 * 
 	 * DFS
 	 * 
+	 * 
+		37 / 37 test cases passed.
+		Status: Accepted
+		Runtime: 2 ms (Your runtime beats 45.50 % of java submissions.)
+		Memory Usage: 39.4 MB
+	 * 
+	 * 
 	 */
 	public List<Integer> preorder(Node root) {
 
@@ -63,5 +70,31 @@ public class TraversalofNary {
 		return res;
 
 	}
-
+	/*
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 * 
+	 * 
+		37 / 37 test cases passed.
+		Status: Accepted
+		Runtime: 0 ms (Your runtime beats 100.00 % of java submissions.)
+		Memory Usage: 40 MB
+		
+		
+	 * 
+	 */
+	
+	List<Integer> res = new ArrayList<>() ;
+	
+	public List<Integer> preorder2(Node root) {
+		
+		if(root == null) return res ;
+		res.add(root.val) ;
+		
+		for(Node node: root.children){
+			preorder2(node) ;
+		}
+		return res ;
+		
+	}
 }
