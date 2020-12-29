@@ -100,7 +100,38 @@ public class NaryTreePostorderTraversal {
 		
 		return list ;
 		
+	}
+	
+	//approach 3
+	
+	/*
+	 * 37 / 37 test cases passed.
+	   Status: Accepted
+       Runtime: 0 ms (Your runtime beats 100.00 % of java submissions.)
+       Memory Usage: 40.1 MB
+	 * 
+	 * 
+	 * 
+	 */
+	
+	public List<Integer> postorder3(Node root){
 		
+		LinkedList<Integer> list = new LinkedList<>() ;
+		
+		return helper(root, list) ;
+		
+	}
+	
+	private List<Integer> helper(Node root, List<Integer> list){
+		
+		if(root == null) return list ;
+		
+		for(Node child: root.children){
+			helper(child, list) ;
+		}
+		
+		list.add(root.val) ;
+		return list ;
 	}
 	
 }
