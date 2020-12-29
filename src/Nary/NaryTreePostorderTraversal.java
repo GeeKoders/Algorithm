@@ -3,6 +3,7 @@ package Nary;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class NaryTreePostorderTraversal {
 	
@@ -59,6 +60,41 @@ public class NaryTreePostorderTraversal {
 			
 			for(Node child: node.children){
 				queue.add(child) ;
+			}
+		}
+		
+		return list ;
+		
+		
+	}
+	
+	//approach 2
+	
+	
+	/*
+	 * 37 / 37 test cases passed.
+	   Status: Accepted
+	   Runtime: 2 ms (Your runtime beats 47.72 % of java submissions.)
+	   Memory Usage: 39.7 MB
+	 * 
+	 * 
+	 */
+	public List<Integer> postorder2(Node root){
+		
+		LinkedList<Integer> list = new LinkedList<>() ;
+		Stack<Node> stack = new Stack<>() ;
+		
+		if(root == null) return list ;
+		
+		stack.push(root) ;
+		
+		while(!stack.isEmpty()){
+			
+			Node node = stack.pop();
+			list.addFirst(node.val);
+			
+			for(Node child: node.children){
+				stack.add(child) ;
 			}
 		}
 		
