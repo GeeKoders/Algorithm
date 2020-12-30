@@ -1,5 +1,6 @@
 package Nary;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -73,6 +74,41 @@ public class NaryTreeLevelOrderTraversal {
 		}
 
 		return res;
+	}
+	
+	//approach 2 recursive
+	
+	/*
+	 * Time complexity: O(N)
+	 * Space complexity:  O(logN) average case and O(n) worst case. The space used is on the runtime stack.
+	 * 
+	 * 
+	 * 37 / 37 test cases passed.
+		Status: Accepted
+		Runtime: 0 ms (Your runtime beats 100.00 % of java submissions.)
+		Memory Usage: 40 MB
+	 * 
+	 */
+	
+	private List<List<Integer>> result = new ArrayList<>() ;
+	
+	public List<List<Integer>> levelOrder2(Node root) {
+		if(root != null) traverseNode(root, 0) ;
+		return result ;
+	}
+
+
+	private void traverseNode(Node node, int level) {
+
+		if(result.size() <= level){
+			result.add(new ArrayList<>()) ;
+		}
+		
+		result.get(level).add(node.val) ;
+		
+		for(Node child: node.children){
+			traverseNode(child, level + 1) ;
+		}
 	}
 
 }
