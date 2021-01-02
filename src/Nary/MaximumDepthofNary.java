@@ -1,5 +1,7 @@
 package Nary;
 
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MaximumDepthofNary {
@@ -55,4 +57,32 @@ public class MaximumDepthofNary {
     
         
     }
+    
+    // approach 2
+    /*
+     * Time complexity: O(N)
+     * Space complexity: best case is O(logN), worst case is O(N) 
+     * 
+     * 
+     */
+    public int maxDepth2(Node root) {
+    	
+    	if(root == null){
+    		return 0 ; 
+    	}else if(root.children.isEmpty()){
+    		return 1 ; 
+    	}else{
+    		
+    		List<Integer> heights = new LinkedList<>() ;
+    		
+    		for(Node item: root.children){
+    			heights.add(maxDepth2(item)) ;
+    		}
+    		
+    		return Collections.max(heights) ;
+    	}
+    	
+    }
+    
+    
 }
