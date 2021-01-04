@@ -1,6 +1,6 @@
 package Trie;
 
-public class ImplementTrie {
+public class Trie {
 	
 	class TrieNode{
 		
@@ -22,6 +22,10 @@ public class ImplementTrie {
 			links[ch - 'a'] = node ;
 		}
 		
+		public TrieNode get(char ch){
+			return links[ch - 'a'] ;
+		}
+		
 		public void setEnd(){
 			isEnd = true ;
 		}
@@ -41,21 +45,42 @@ public class ImplementTrie {
 	 * 
 	 */
 	public static void main(String[] args) {
-		ImplementTrie obj = new ImplementTrie();
+		Trie obj = new Trie();
 		obj.insert("abc");
 		boolean param_2 = obj.search("abc");
 		boolean param_3 = obj.startsWith("ab");
 	}
 	
 	
+	private TrieNode root ;
 	 /** Initialize your data structure here. */
-    public ImplementTrie() {
-        
+    public Trie() {
+    	root = new TrieNode() ;
     }
     
     /** Inserts a word into the trie. */
+    /*
+     * Time complexity: O(m), where m is the key length
+     * Space complexity: O(m)
+     * 
+     */
     public void insert(String word) {
-        
+       
+    	TrieNode node = root ;
+       
+    	for(int i=0; i< word.length(); i++){
+    		
+    		char currentChar = word.charAt(i) ;
+    		
+    		if(!node.containsKey(currentChar)){
+    			node.put(currentChar, new TrieNode());
+    		}
+    		
+    		node = node.get(currentChar) ;
+    		
+    	}
+        node.setEnd(); 
+       
     }
     
     /** Returns if the word is in the trie. */
