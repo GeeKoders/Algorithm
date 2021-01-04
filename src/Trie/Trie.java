@@ -104,14 +104,27 @@ public class Trie {
     }
     
  // Returns if the word is in the trie.
+    /*
+     * Time complexity: O(m)
+     * Space complexity: O(1)
+     * 
+     * 
+     */
     public boolean search(String word) {
        TrieNode node = searchPrefix(word) ;
        return node != null && node.isEnd() ;
     }
     
     /** Returns if there is any word in the trie that starts with the given prefix. */
+    /*
+     * Time complexity: O(m)
+     * Space complexity: O(1)
+     * 
+     */
+    
     public boolean startsWith(String prefix) {
-        
+        TrieNode node = searchPrefix(prefix) ;
+        return node != null ;
     }
 	
 }
