@@ -82,10 +82,31 @@ public class Trie {
         node.setEnd(); 
        
     }
-    
-    /** Returns if the word is in the trie. */
-    public boolean search(String word) {
+    // search a prefix or whole key in trie 
+    // and returns the node where search ends
+    public TrieNode searchPrefix(String word) {
         
+    	TrieNode node = root ;
+    	for(int i=0; i < word.length(); i++){
+    		
+    		char curLetter = word.charAt(i) ;
+    		
+    		if(node.containsKey(curLetter)){
+    			node = node.get(curLetter) ;
+    		}else{
+    			return null ;
+    		}
+    		
+    	}
+    	
+    	return node ;
+    	
+    }
+    
+ // Returns if the word is in the trie.
+    public boolean search(String word) {
+       TrieNode node = searchPrefix(word) ;
+       return node != null && node.isEnd() ;
     }
     
     /** Returns if there is any word in the trie that starts with the given prefix. */
