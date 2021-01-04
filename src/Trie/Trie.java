@@ -43,6 +43,9 @@ public class Trie {
 	 * 
 	 * solution: https://leetcode.com/problems/implement-trie-prefix-tree/solution/
 	 * 
+	 * Runtime: 31 ms, faster than 67.72% of Java online submissions for Implement Trie (Prefix Tree).
+	 * Memory Usage: 48.9 MB, less than 62.98% of Java online submissions for Implement Trie (Prefix Tree). 
+	 * 
 	 */
 	public static void main(String[] args) {
 		Trie obj = new Trie();
