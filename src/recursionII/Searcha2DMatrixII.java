@@ -16,7 +16,7 @@ public class Searcha2DMatrixII {
 	/*
 	 * Brute Force
 	 *  
-	 *  Time complexity: O(n*m)
+	 * Time complexity: O(n*m)
 	 */
 	public boolean searchMatrix(int[][] matrix, int target) {
 
@@ -30,6 +30,39 @@ public class Searcha2DMatrixII {
 
 		return false;
 
+	}
+	
+	/*
+	 * 
+	 *  128 / 128 test cases passed.
+		Status: Accepted
+		Runtime: 6 ms (Your runtime beats 36.97 % of java submissions.)
+		Memory Usage: 51.7 MB
+	 * 
+	 * 
+	 * Time complexity: O(n + m)
+	 * 
+	 */
+	public boolean searchMatrix2(int [][] matrix, int target){
+		
+		int row = matrix.length - 1 ;
+		int col = 0 ;
+		
+		
+		while(row >=0 && col <= matrix[0].length - 1){
+			
+			if(matrix[row][col] > target){
+				row-- ;
+			}else if(matrix[row][col] < target){
+				col++ ;
+			}else{
+				return true ;
+			}
+		}
+		
+		return false ;
+		
+		
 	}
 
 }
