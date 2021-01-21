@@ -2,12 +2,21 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import javafx.util.Pair;
+
 
 public class Test {
 
 	public static void main(String[] args) {
-		Test test = new Test() ;
-		test.mapLoop();
+//		Test test = new Test() ;
+//		test.mapLoop();
+		
+		Pair<Integer, String> pair = new Pair<>(1, "One");
+		Integer key = pair.getKey();
+	    String value = pair.getValue();
+	    System.out.println("key:" + key);
+	    System.out.println("value:" + value);
+		
 	}
 	
 	@SuppressWarnings("rawtypes")
