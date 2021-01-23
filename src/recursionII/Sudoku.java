@@ -61,10 +61,12 @@ public class Sudoku {
 
 				if (solve(rowIndex + 1, columnIndex))
 					return true;
+				
+				sudokuTable[rowIndex][columnIndex] = 0; // backtracking !!!
 			}
 		}
 
-		sudokuTable[rowIndex][columnIndex] = 0; // backtracking !!!
+		
 
 		return false;
 	}
