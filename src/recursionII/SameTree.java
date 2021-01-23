@@ -1,6 +1,8 @@
 package recursionII;
 
 import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class SameTree {
 
@@ -13,6 +15,22 @@ public class SameTree {
 	}
 
 	// recursive
+	/*
+	 * 100. Same Tree(Easy)
+	 * 
+	 * https://leetcode.com/explore/learn/card/recursion-ii/503/recursion-to-iteration/2894/
+	 * 
+	 * solution: https://leetcode.com/problems/same-tree/solution/
+	 * 
+	 *  60 / 60 test cases passed.
+		Status: Accepted
+		Runtime: 0 ms (Your memory usage beats 34.72 % of java submissions.)
+		Memory Usage: 36.5 MB 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 	public boolean isSameTree(TreeNode p, TreeNode q) {
 
 		if (p == null && q == null)
@@ -38,7 +56,7 @@ public class SameTree {
 		return true;
 	}
 
-	public boolean isSameTree(TreeNode p, TreeNode q) {
+	public boolean isSameTree2(TreeNode p, TreeNode q) {
 		if (p == null && q == null)
 			return true;
 		if (!check(p, q))
@@ -73,5 +91,42 @@ public class SameTree {
 		}
 		return true;
 	}
+	
+	//easy to understand
+	/*
+	 * 
+		60 / 60 test cases passed.
+		Status: Accepted
+		Runtime: 0 ms (Your memory usage beats 24.57 % of java submissions.)
+		Memory Usage: 36.7 MB
+	 * 
+	 */
+	public boolean isSameTree3(TreeNode p, TreeNode q) {
+		
+		Queue<TreeNode> queue = new LinkedList<>();
+        if (p == null && q == null)
+            return true;
+        if (p == null || q == null)
+            return false;
+        if (p != null && q != null) {
+            queue.offer(p);
+            queue.offer(q);
+        }
+        while (!queue.isEmpty()) {
+            TreeNode first = queue.poll();
+            TreeNode second = queue.poll();
+            if (first == null && second == null)
+                continue;
+            if (first == null || second == null)
+                return false;
+            if (first.val != second.val)
+                return false;
+            queue.offer(first.left);
+            queue.offer(second.left);
+            queue.offer(first.right);
+            queue.offer(second.right);
+        }
+        return true;
+    }
 
 }
