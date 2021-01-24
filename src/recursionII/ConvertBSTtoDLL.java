@@ -48,8 +48,21 @@ public class ConvertBSTtoDLL {
 		Runtime: 0 ms
 		Memory Usage: 38.6 MB (Your memory usage beats 26.36 % of java submissions.)
 		
+		Time complexity: O(N)
+		Space complexity: O(logN)
 		
 	 */
+	public Node treeToDoublyList(Node root) {
+		if (root == null)
+			return null;
+
+		helper(root);
+		// close DLL
+		last.right = first;
+		first.left = last;
+		return first;
+	}
+	
 	public void helper(Node node) {
 		if (node != null) {
 			// left
@@ -70,18 +83,6 @@ public class ConvertBSTtoDLL {
 			helper(node.right);
 		}
 	}
-
-	public Node treeToDoublyList(Node root) {
-		if (root == null)
-			return null;
-
-		helper(root);
-		// close DLL
-		last.right = first;
-		first.left = last;
-		return first;
-	}
-	
 	// soltuion2 (easy to understand in-place)
     Node dummy;
     
