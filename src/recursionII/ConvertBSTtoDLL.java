@@ -1,5 +1,7 @@
 package recursionII;
 
+import java.util.Stack;
+
 public class ConvertBSTtoDLL {
 	class Node {
 		public int val;
@@ -109,6 +111,50 @@ public class ConvertBSTtoDLL {
         prev = node;
         treeToDoublyListHelper(node.right);
         
+    }
+    
+    //solution3
+    /*
+     * 50 / 50 test cases passed.
+	   Status: Accepted
+       Runtime: 0 ms
+       Memory Usage: 38.2 MB (Your memory usage beats 72.97 % of java submissions.)
+     * 
+     * 
+     */
+    public Node treeToDoublyList3(Node root){
+    	
+    	if(root == null) return null ;
+    	
+    	Node prev = null ;
+    	Node head = null ;
+    	
+    	Stack<Node> stack = new Stack() ;
+    	while(root != null || !stack.isEmpty()){
+    		
+    		while(root!=null){
+    			stack.push(root) ;
+    			root = root.left ;
+    		}
+    		
+    		root = stack.pop();
+    		
+    		if(prev == null){
+    			head = root; 
+    		}else{
+    			prev.right = root ;
+    			root.left = prev ;
+    		}
+    		
+    		prev = root ;
+    		root = root.right ;
+    		
+    	}
+    	
+    	prev.right = head ;
+    	head.left = prev ;
+    	return head ;
+    	
     }
 	
 	
