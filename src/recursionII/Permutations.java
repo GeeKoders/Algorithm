@@ -17,6 +17,14 @@ public class Permutations {
 	 * 
 	 * https://www.youtube.com/watch?v=T909rebQJ70&feature=youtu.be&ab_channel=happygirlzt
 	 * 
+	 * 
+	 * 
+		25 / 25 test cases passed.
+		Status: Accepted
+		Runtime: 1 ms (Your runtime beats 93.58 % of java submissions.)
+		Memory Usage: 39.3 MB (Your memory usage beats 57.89 % of java submissions.)
+	 * 
+	 * 
 	 */
 	public List<List<Integer>> permute(int[] nums) {
 
