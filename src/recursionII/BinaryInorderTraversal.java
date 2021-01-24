@@ -2,6 +2,7 @@ package recursionII;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class BinaryInorderTraversal {
 
@@ -30,6 +31,8 @@ public class BinaryInorderTraversal {
 		Runtime: 0 ms
 		Memory Usage: 39.1 MB
 	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(logN)
 	 * 
 	 */
 	public List <Integer> inorderTraversal(TreeNode root) {
@@ -49,6 +52,39 @@ public class BinaryInorderTraversal {
             if (root.right != null) {
                 helper(root.right, res);
             }
+    }
+    
+    /*
+     * Stack solution
+     * 
+     *  68 / 68 test cases passed.
+		Status: Accepted
+		Runtime: 1 ms
+		Memory Usage: 39 MB
+		
+		Time Complexity: O(N)
+		Space complexity: O(N)
+     * 
+     */
+    public List <Integer> inorderTraversal2(TreeNode root) {
+    	 
+    	
+    	List <Integer> result = new ArrayList<>() ;
+         Stack<TreeNode> stack = new Stack() ;
+         TreeNode curr = root; 
+         
+         while(curr!= null || !stack.isEmpty()){
+             
+             while(curr!=null){
+                 stack.push(curr) ;
+                 curr = curr.left ;
+             }
+             curr = stack.pop() ;
+             result.add(curr.val) ;
+             curr = curr.right ;
+         }
+         
+         return result ;
     }
 	
 	
