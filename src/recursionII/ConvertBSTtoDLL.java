@@ -79,4 +79,37 @@ public class ConvertBSTtoDLL {
 		first.left = last;
 		return first;
 	}
+	
+	// soltuion2 (easy to understand in-place)
+    Node dummy;
+    
+    Node prev;
+    
+    public Node treeToDoublyList2(Node root) 
+    {
+        if(root == null)
+            return null;
+        dummy = new Node(-1);
+        prev = dummy;
+        dummy.right = root;
+        treeToDoublyListHelper(root);
+        prev.right = dummy.right;
+        dummy.right.left=prev;
+        return dummy.right;
+        
+    }
+    
+    public void treeToDoublyListHelper(Node node) 
+    {
+        if(node==null)
+            return;
+        treeToDoublyListHelper(node.left);
+        prev.right = node;
+        node.left = prev;
+        prev = node;
+        treeToDoublyListHelper(node.right);
+        
+    }
+	
+	
 }
