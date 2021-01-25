@@ -50,6 +50,10 @@ public class RemoveElement {
 				nums[count++] = nums[i];
 			}
 		}
+		
+		for(int i=0;i<nums.length;i++){
+			System.out.print(nums[i] + " ");
+		}
 
 		return count;
 
