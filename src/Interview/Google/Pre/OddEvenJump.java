@@ -1,5 +1,8 @@
 package Interview.Google.Pre;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class OddEvenJump {
 
 	/*
@@ -101,5 +104,59 @@ public class OddEvenJump {
 
 		return maxIndex;
 
+	}
+	/*
+	 * Approach2: TreeMap
+	 * 
+	 * 
+	 * 
+	 *  64 / 64 test cases passed.
+		Status: Accepted
+		Runtime: 51 ms (Your runtime beats 97.96 % of java submissions.)
+		Memory Usage: 46.4 MB
+	 * 
+	 * 
+	 * Time complexity: O(NlogN) 
+	 * Space complexity: O(N)
+	 * 
+	 * discuss: https://leetcode.com/problems/odd-even-jump/discuss/217981/JavaC%2B%2BPython-DP-using-Map-or-Stack
+	 * 
+	 */
+	public int oddEvenJumps2(int[] A) {
+		
+		int n = A.length ;
+		TreeMap<Integer, Integer> treeMap = new TreeMap() ;
+		
+		boolean [] odd = new boolean[n] ;
+		boolean [] even = new boolean[n] ;
+		
+		odd[n - 1] = true ;
+		even[n - 1] = true ;
+		treeMap.put(A[n-1], n - 1) ;
+		
+		for(int i = n-2; i>=0 ; i--){
+		
+			Map.Entry oddEntry = treeMap.ceilingEntry(A[i]), evenEntry = treeMap.floorEntry(A[i]) ;
+					
+			if(oddEntry != null){
+				odd[i] = even[(int) oddEntry.getValue()] ;
+			}
+			
+			if(evenEntry != null){
+				even[i] = odd[(int) evenEntry.getValue()] ;
+			}
+			
+			
+			treeMap.put(A[i], i) ;
+		}
+		
+		int res = 0 ;
+		for(boolean b: odd){
+			if(b) res ++ ;
+		}
+			
+		return res ;
+		
+		
 	}
 }
