@@ -4,6 +4,40 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class OddEvenJump {
+	
+	
+	
+	public static void main(String[] args) {
+		
+		int [] A = {10,15,12,14,13} ;
+		
+		int n = A.length ;
+		TreeMap<Integer, Integer> treeMap = new TreeMap() ;
+		
+		boolean [] odd = new boolean[n] ;
+		boolean [] even = new boolean[n] ;
+		
+		odd[n - 1] = true ;
+		even[n - 1] = true ;
+		treeMap.put(A[n-1], n - 1) ;
+		
+		
+		//http://tw.gitbook.net/java/util/treemap_ceilingentry.html
+		for(Map.Entry map: treeMap.entrySet()){
+			System.out.println(map.getKey() + ":" + map.getValue());
+		}
+		
+		
+		for(int i = n-2; i>=0 ; i--){
+		
+			Map.Entry oddEntry = treeMap.ceilingEntry(A[i]), evenEntry = treeMap.floorEntry(A[i]) ;
+			if(oddEntry != null){
+				System.out.println("i:" + i + ",keyOdd:" + oddEntry.getKey() + ",valueOdd:" + oddEntry.getValue());
+			}
+			
+		}
+		
+	}
 
 	/*
 	 * 975. Odd Even Jump
