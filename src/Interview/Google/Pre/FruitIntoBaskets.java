@@ -18,6 +18,10 @@ public class FruitIntoBaskets {
 	 * Runtime: 18 ms, faster than 72.28% of Java online submissions for Fruit Into Baskets.
 	 * 
 	 * Memory Usage: 85 MB, less than 10.23% of Java online submissions for Fruit Into Baskets.
+	 *
+	 *    input[3,3,3,1,2,1,1,2,3,3,4]
+	 * curr_max 1 2 3 4 2 3 4 5 2 3 3
+	 *      max 1 2 3 4 4 4 4 5 5 5 5
 	 * 
 	 * Time complexity: O(N) 
 	 * Space complexity: O(1)
