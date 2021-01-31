@@ -26,6 +26,9 @@ public class ThreeSum {
 	 * 
 	 * solution: https://leetcode.com/problems/3sum/solution/
 	 * 
+	 * Runtime: 28 ms, faster than 47.70% of Java online submissions for 3Sum.
+	 * Memory Usage: 43.9 MB, less than 27.30% of Java online submissions for 3Sum.
+	 * 
 	 * Two pointer
 	 * 
 	 * Time complexity: O(N*logN + N^2) = O(N^2)
@@ -76,10 +79,11 @@ public class ThreeSum {
 				} else if (sum > 0) {
 					right--;
 				} else {
-					list.add(nums[i]);
-					list.add(nums[left++]);
-					list.add(nums[right--]);
-					res.add(list);
+//					list.add(nums[i]);
+//					list.add(nums[left++]);
+//					list.add(nums[right--]);
+//					res.add(list) ;
+					res.add(Arrays.asList(nums[i], nums[left++], nums[right--]));
 					
 					//avoid to duplicate
 					/*
