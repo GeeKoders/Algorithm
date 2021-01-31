@@ -1,5 +1,8 @@
 package Tag.Array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TwoSum {
 
 	
@@ -28,6 +31,40 @@ public class TwoSum {
                     return new int[]{i , j} ;
                 }
             }
+        }
+        
+        return res ;
+    }
+	/*
+	 * HashTable
+	 * 
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Two Sum.
+	 * Memory Usage: 40.4 MB, less than 12.00% of Java online submissions for Two Sum.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 * 
+	 * 
+	 */
+	public int[] twoSum2(int[] nums, int target) {
+        
+        int [] res = new int[2] ;
+        
+        if(nums == null || nums.length < 1){
+            return res ;
+        }
+        
+        Map<Integer, Integer> map = new HashMap() ;
+        
+        for(int i=0; i<nums.length; i++){
+            
+            int complement = target - nums[i] ;
+            
+            if(map.containsKey(complement)){
+                return new int[]{map.get(complement), i} ;
+            }
+            
+            map.put(nums[i], i) ;
         }
         
         return res ;
