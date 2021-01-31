@@ -13,6 +13,9 @@ public class LicenseKeyFormatting {
 		Runtime: 9 ms (Your runtime beats 75.97 % of java submissions.)
 		Memory Usage: 39.3 MB (Your memory usage beats 66.36 % of java submissions.)
 	 * 
+	 * Time Complexity: O(N)
+	 * Space complexity: O(1)
+	 * 
 	 */
 	public String licenseKeyFormatting(String S, int K) {
 
