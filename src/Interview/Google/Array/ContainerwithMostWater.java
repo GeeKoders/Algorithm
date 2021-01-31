@@ -34,4 +34,44 @@ public class ContainerwithMostWater {
         return res ;
         
     }
+	
+	/*
+	 * Your runtime beats 45.14 % of java submissions.
+	 * Your memory usage beats 8.72 % of java submissions.
+	 * 
+	 * Two pointer
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(1)
+	 * 
+	 */
+	public int maxArea2(int[] height) {
+        
+		int res = -1 ;
+        
+        if(height == null || height.length < 2) return res ;
+        
+        int n = height.length ;
+        
+        int left = 0 ; 
+        int right = n - 1  ;
+        
+        while(left < right){
+            
+            
+            res = Math.max(res, Math.min(height[left], height[right]) * (right - left)) ;
+            
+            if(height[left] < height[right]){
+                left ++ ;
+            }else{
+                right -- ;
+            }
+            
+            
+        }
+        
+        return res ;
+        
+    }
+	
 }
