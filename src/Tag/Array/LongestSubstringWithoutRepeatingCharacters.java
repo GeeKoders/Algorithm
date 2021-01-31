@@ -48,5 +48,36 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
 		return max;
 	}
+	
+	
+	/*
+	 * Sliding window
+	 * 
+	 * Runtime: 7 ms, faster than 48.17% of Java online submissions for Longest Substring Without Repeating Characters.
+	 * Memory Usage: 38.8 MB, less than 90.79% of Java online submissions for Longest Substring Without Repeating Characters.
+	 * 
+	 * 
+	 * Time complexity : O(2n) = O(n)O(2n)=O(n)
+	 * Space complexity : O(min(m, n))O(min(m,n)). Same as the previous approach. We need O(k)O(k) space for the sliding window, where kk is the size of the Set. The size of the Set is upper bounded by the size of the string nn and the size of the charset/alphabet mm.
+     *
+	 */
+	public int lengthOfLongestSubstring2(String s) {
+		  Set<Character> set = new HashSet() ;
+	        int n = s.length() ;
+	        int ans = 0, i=0, j=0 ;
+	        while(i<n & j<n){
+	            
+	            if(!set.contains(s.charAt(j))){
+	                set.add(s.charAt(j++)) ;
+	                ans = Math.max(ans, j-i) ;
+	            }else{
+	                set.remove(s.charAt(i++)) ;
+	            }
+	            
+	        }
+	        
+	        return ans ;
+	    }
+	}
 
 }
