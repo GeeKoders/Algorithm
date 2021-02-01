@@ -26,14 +26,14 @@ public class ThreeSum {
 	 * 
 	 * solution: https://leetcode.com/problems/3sum/solution/
 	 * 
-	 * Runtime: 28 ms, faster than 47.70% of Java online submissions for 3Sum.
-	 * Memory Usage: 43.9 MB, less than 27.30% of Java online submissions for 3Sum.
+	 * Runtime: 26 ms, faster than 50.70% of Java online submissions for 3Sum.
+	 * Memory Usage: 43.2 MB, less than 55.88% of Java online submissions for 3Sum.
 	 * 
 	 * Two pointer
 	 * 
 	 * Time complexity: O(N*logN + N^2) = O(N^2)
 	 * Space complexity: O(1)
-	 * Space Complexity: from \mathcal{O}(\log{n})O(logn) to \mathcal{O}(n)O(n), depending on the implementation of the sorting algorithm.
+	 * Space Complexity: depending on the implementation of the sorting algorithm.
 	 *
 	 */
 	public List<List<Integer>> threeSum(int[] nums) {
