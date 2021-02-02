@@ -14,6 +14,10 @@ public class MultiplyStrings {
 	 * 
 	 * discuss: https://leetcode.com/explore/interview/card/google/59/array-and-strings/3051/discuss/17605/Easiest-JAVA-Solution-with-Graph-Explanation
 	 * 
+	 * reference: 
+	 * 
+	 * https://www.youtube.com/watch?v=CnEFY5Y3Z68&ab_channel=AmellPeralta
+	 * 
 	 * Your runtime beats 22.20 % of java submissions.
 	 * Your memory usage beats 7.73 % of java submissions.
 	 * 
