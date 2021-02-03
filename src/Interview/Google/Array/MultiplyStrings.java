@@ -4,7 +4,8 @@ public class MultiplyStrings {
 
 	public static void main(String[] args) {
 		MultiplyStrings solve = new MultiplyStrings() ;
-		solve.multiply("20", "5") ;
+//		solve.multiply("20", "5") ;
+		solve.multiply("9173", "0") ;
 	}
 	
 	/*
@@ -44,8 +45,9 @@ public class MultiplyStrings {
 		for (int val : pos) {
 
 			// first index should get rid of
-			System.out.println("val:" + val);
+//			System.out.println("val:" + val);
 			if ( !(sb.length() == 0 && val == 0)) {
+				System.out.println("val:" + val);
 				sb.append(val);
 			}
 
