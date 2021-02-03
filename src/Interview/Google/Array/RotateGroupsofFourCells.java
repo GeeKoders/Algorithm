@@ -98,5 +98,37 @@ public class RotateGroupsofFourCells {
             }
         }
     }
+	/*
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Rotate Image.
+	 * 
+	 * Memory Usage: 39.4 MB, less than 26.53% of Java online submissions for Rotate Image.
+	 * 
+	 */
+	public void rotate4(int[][] matrix) {
+		
+		int s=0 ; 
+		int e = matrix.length - 1 ;
+		while(s < e){
+			
+			for(int k=0; k<matrix[0].length; k++){
+				int temp = matrix[s][k] ;
+				matrix[s][k] = matrix[e][k] ;
+				matrix[e][k] = temp ;
+			}
+			
+			
+			s++; 
+			e-- ;
+		}
+		
+		for(int i=0; i<matrix.length; i++){
+			for(int j=i+1; j<matrix[0].length; j++){
+				int temp = matrix[i][j] ;
+				matrix[i][j] = matrix[j][i] ;
+				matrix[j][i] = temp ;
+			}
+		}
+		
+	}
 	
 }
