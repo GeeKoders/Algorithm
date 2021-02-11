@@ -1,8 +1,10 @@
-package Array;
+package Learn.Array;
 
 public class RotateArray {
 
 	/*
+	 * 189. Rotate Array (Easy)
+	 * 
 	 * https://leetcode.com/explore/learn/card/array-and-string/204/conclusion/1182/
 	 * 
 	 * solution: https://leetcode.com/articles/rotate-array/
@@ -50,6 +52,11 @@ public class RotateArray {
 
 	}
 	//time complexity: O(N*k), space complexity: O(1)
+	/*
+	 * Runtime: 215 ms, faster than 9.69% of Java online submissions for Rotate Array.
+	 * Memory Usage: 39.5 MB, less than 58.65% of Java online submissions for Rotate Array.
+	 * 
+	 */
 	public void rotate2(int[] nums, int k) {
 		
 		int tmp, previous ;
