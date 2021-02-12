@@ -1,8 +1,14 @@
-package LinkedList;
+package Learn.LinkedList;
 
 public class RemoveNthNodeFromEndOfList {
 
 	/*
+	 * 19. Remove Nth Node From End of List (Medium)
+	 * 
+	 * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+	 * 
+	 * solution: https://leetcode.com/problems/remove-nth-node-from-end-of-list/solution/
+	 * 
 	 * Given a linked list, remove the n-th node from the end of list and return
 	 * its head. 
 	 * Example: Given linked list: 1->2->3->4->5, and n = 2. 
@@ -15,9 +21,31 @@ public class RemoveNthNodeFromEndOfList {
 	 * Follow up:
 	 * 
 	 * Could you do this in one pass?
+	 * 
+		208 / 208 test cases passed.
+		Status: Accepted
+		Runtime: 7 ms
+		Memory Usage: 38.5 MB
+	 * 
+	 * Your memory usage beats 19.08 % of java submissions.
+	 * 
+	 * Time complexity: O(L)
+	 * Space complexity: O(1)
+	 * 
 	 */
 
-	private int count = 0 ;
+	
+	class ListNode{
+		
+		int val ; 
+		
+		ListNode next ;
+		
+		public ListNode(int val){
+			this.val = val ;
+		}
+		
+	}
 	
 	public static void main(String[] args) {
 
@@ -27,7 +55,6 @@ public class RemoveNthNodeFromEndOfList {
 	public ListNode removeNthFromEnd(ListNode head, int n) {
         
         int size = getSize(head) ;
-        System.out.println("size:" + size) ;
         if(n<0 || n>size){
             return null ;
         }
@@ -36,8 +63,6 @@ public class RemoveNthNodeFromEndOfList {
         ListNode prev = head ;
     
         int index = size - n;
-        int target = getIndex(head, index) ;
-        System.out.println("target:" + target) ;
         int counter = 0 ;
         while(current!=null && counter++ != index){
             prev = current ;
@@ -56,6 +81,8 @@ public class RemoveNthNodeFromEndOfList {
     
     public int getSize(ListNode head){
         
+    	int count = 0 ;
+    	
         ListNode current = head ;
         
         while(current!=null){
@@ -64,19 +91,6 @@ public class RemoveNthNodeFromEndOfList {
         }
         
         return count ;
-        
-    }
-    
-    public int getIndex(ListNode head, int index){
-        int count = 0 ;
-        
-        ListNode current = head ;
-        
-        while(count++ < index){
-            current = current.next ;
-        }
-        return current.val ;    
-        
         
     }
     
