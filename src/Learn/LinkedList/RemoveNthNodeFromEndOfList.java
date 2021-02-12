@@ -45,6 +45,11 @@ public class RemoveNthNodeFromEndOfList {
 			this.val = val ;
 		}
 		
+		public ListNode(int val, ListNode next){
+			this.val = val ;
+			this.next = next ;
+		}
+		
 	}
 	
 	public static void main(String[] args) {
@@ -92,6 +97,34 @@ public class RemoveNthNodeFromEndOfList {
         
         return count ;
         
+    }
+    /*
+     * 
+     * 
+		208 / 208 test cases passed.
+		Status: Accepted
+		Runtime: 0 ms
+		Memory Usage: 36.9 MB
+     * 
+     * Your memory usage beats 78.49 % of java submissions.
+     * 
+     * Time complexity: O(L)
+	 * Space complexity: O(1)
+	 * 
+     */
+    public ListNode removeNthFromEnd2(ListNode head, int n) {
+        ListNode dummy = new ListNode(0, head);
+        ListNode curr = dummy;
+        ListNode prev = dummy;
+        while (n-- > 0) {
+            curr = curr.next;
+        }
+        while (curr.next != null) {
+            curr = curr.next;
+            prev = prev.next;
+        }
+        prev.next = prev.next.next;
+        return dummy.next;
     }
     
 
