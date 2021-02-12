@@ -1,8 +1,10 @@
-package Queue;
+package Learn.Queue;
 
 public class NumberofIslands {
 
 	/*
+	 * 200. Number of Islands (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/queue-stack/231/practical-application-queue/1374/
 	 * 
 	 * solution: https://www.youtube.com/watch?v=U6-X_QOwPcs
@@ -21,6 +23,13 @@ public class NumberofIslands {
 	 * ]
 	 * 
 	 * Output: 1
+	 * 
+	 * Your runtime beats 100.00 % of java submissions.
+	 * Your memory usage beats 67.75 % of java submissions.
+	 * 
+	 * Time complexity: O(M*N)
+	 * Space complexity: O(M*N)
+	 * 
 	 * 
 	 */
 
