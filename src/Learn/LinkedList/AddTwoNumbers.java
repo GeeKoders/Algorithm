@@ -1,9 +1,13 @@
-package LinkedList;
+package Learn.LinkedList;
 
 public class AddTwoNumbers {
 
 	/*
+	 * 2. Add Two Numbers (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/linked-list/213/conclusion/1228/
+	 * 
+	 * solution: https://leetcode.com/problems/add-two-numbers/solution/
 	 * 
 	 * You are given two non-empty linked lists representing two non-negative
 	 * integers. The digits are stored in reverse order and each of their nodes
@@ -18,8 +22,26 @@ public class AddTwoNumbers {
 	 * Output: 7 -> 0 -> 8
 	 * Explanation: 342 + 465 = 807.
 	 * 
+	 * Your runtime beats 77.58 % of java submissions.
+	 * Your memory usage beats 61.49 % of java submissions.
+	 * 
+	 * Time complexity: O(max(m, n))
+	 * Space complexity: O(max(m, n))
+	 * 
 	 * 
 	 */
+	
+	class ListNode{
+		
+		int val ;
+		
+		ListNode next ;
+		
+		public ListNode(int val){
+			this.val = val ;
+		}
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
