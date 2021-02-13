@@ -1,4 +1,4 @@
-package Hash;
+package Learn.Hash;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,6 +10,8 @@ public class GroupAnagrams {
 
 	
 	/*
+	 * 49. Group Anagrams (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/hash-table/185/hash_table_design_the_key/1124/
 	 * solution: https://leetcode.com/problems/group-anagrams/solution/
 	 * 
@@ -27,6 +29,12 @@ public class GroupAnagrams {
 	 * Note:
 	 * All inputs will be in lowercase.
 	 * The order of your output does not matter.
+	 * 
+	 * Runtime: 6 ms, faster than 81.35% of Java online submissions for Group Anagrams.
+	 * Memory Usage: 42.1 MB, less than 64.45% of Java online submissions for Group Anagrams.
+	 * 
+	 * Time complexity: O(NKlogK), where N is the length of strs, and K is the maximum length of a string in strs. The outer loop has complexity O(N) as we iterate through each string. 
+	 * Space complexity: O(NK), the total information content stored in ans.
 	 * 
 	 */
 	public static void main(String[] args) {
