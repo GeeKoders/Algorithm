@@ -17,9 +17,12 @@ public class MinimumWindowsSubstring {
 	 * 
 	 * reference:
 	 * 
-	 * https://leetcode.com/problems/minimum-window-substring/solution/
+	 * https://www.youtube.com/watch?v=jSto0O4AJbM&ab_channel=NeetCode
 	 * 
 	 * https://www.youtube.com/watch?v=vvVe7qxOz9U&ab_channel=happygirlzt
+	 * 
+	 * Runtime: 13 ms, faster than 46.41% of Java online submissions for Minimum Window Substring.
+	 * Memory Usage: 40.1 MB, less than 29.10% of Java online submissions for Minimum Window Substring.
 	 * 
 	 * Time complexity: O(|S| + |T|)
 	 * Space complexity: O(|S| + |T|)
@@ -27,67 +30,67 @@ public class MinimumWindowsSubstring {
 	 * 
 	 */
 	public String minWindow(String s, String t) {
-		if (s == null || s.length() == 0) {
-			return "";
-		}
+		if (s.length() == 0 || t.length() == 0) {
+	          return "";
+	      }
 
-		Map<Character, Integer> map = new HashMap<>();
-		Map<Character, Integer> window = new HashMap<>();
+	      Map<Character, Integer> target = new HashMap<Character, Integer>();
+	      for (int i = 0; i < t.length(); i++) {
+	          int count = target.getOrDefault(t.charAt(i), 0);
+	          target.put(t.charAt(i), count + 1);
+	      }
 
-		int minLength = Integer.MAX_VALUE;
-		int minStart = -1;
-		int minEnd = -1;
 
-		for (int i = 0; i < t.length(); i++) {
-			map.put(t.charAt(i), map.getOrDefault(t.charAt(i), 0) + 1);
-		}
+	      int required = target.size();
 
-		int l = 0;
-		int r = 0;
-		int have = 0;
-		int required = t.length();
+	      int l = 0, r = 0;
 
-		for (r = 0; r < s.length(); r++) {
 
-			char cur = s.charAt(r);
+	      int have = 0;
+	      int minLength = Integer.MAX_VALUE ;
+	      int minStart = 0 ;
+	      int minEnd = 0 ;
 
-			window.put(cur, map.getOrDefault(cur, 0) + 1);
 
-			if (map.containsKey(cur) && window.get(cur) == map.get(cur)) {
-				have++;
-			}
+	      Map<Character, Integer> windowCounts = new HashMap<Character, Integer>();
 
-			while (have == required) {
-				// update our result
-				if ((r - l + 1) < minLength) {
-					minStart = l;
-					minEnd = r;
-				}
-				minLength = r - l + 1;
+	      // ans list of the form (window length, left, right)
+	      int[] ans = {-1, 0, 0};
 
-				// pop from the left of our window ;
-				window.put(cur, map.getOrDefault(cur, 0) - 1);
+	      while (r < s.length()) {
+	          
+	          char c = s.charAt(r);
+	          int count = windowCounts.getOrDefault(c, 0);
+	          windowCounts.put(c, count + 1);
 
-				if (map.containsKey(s.charAt(l))) {
+	  
+	          if (target.containsKey(c) && windowCounts.get(c).intValue() == target.get(c).intValue()) {
+	              have++;
+	          }
 
-					if (window.get(s.charAt(l)) < map.get(s.charAt(l))) {
-						have--;
-					}
 
-				}
+	          while (l <= r && have == required) {
+	              c = s.charAt(l);
+	              if ( r - l + 1 < minLength) {
+	                  minLength = r - l + 1;
+	                  minStart = l;
+	                  minEnd = r;
+	              }
 
-				l++;
+	              windowCounts.put(c, windowCounts.get(c) - 1);
+	              if (target.containsKey(c) && windowCounts.get(c).intValue() < target.get(c).intValue()) {
+	                  have--;
+	              }
 
-			}
 
-		}
+	              l++;
+	          }
 
-		minStart = l;
-		minEnd = r;
-		;
+	          r++;   
+	      }
 
-		return minLength == Integer.MAX_VALUE ? "" : s.substring(minStart,
-				minEnd);
+	      return minLength == Integer.MAX_VALUE ? "" : s.substring(minStart, minEnd + 1);
+	        
 	}
 	
 	
