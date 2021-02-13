@@ -58,20 +58,20 @@ public class LongestSubstringWithoutRepeatingCharacters {
 	 * 
 	 * 
 	 * Time complexity : O(2n) = O(n)O(2n)=O(n)
-	 * Space complexity : O(min(m, n))O(min(m,n)). Same as the previous approach. We need O(k)O(k) space for the sliding window, where kk is the size of the Set. The size of the Set is upper bounded by the size of the string nn and the size of the charset/alphabet mm.
+	 * Space complexity : O(min(m, n)). Same as the previous approach. We need O(k) space for the sliding window, where k is the size of the Set. The size of the Set is upper bounded by the size of the string n and the size of the charset/alphabet m.
      *
 	 */
 	public int lengthOfLongestSubstring2(String s) {
-		  Set<Character> set = new HashSet() ;
+		 Set<Character> set = new HashSet() ;
 	        int n = s.length() ;
-	        int ans = 0, i=0, j=0 ;
-	        while(i<n & j<n){
+	        int ans = 0, left=0, right=0 ;
+	        while(left<n && right<n){
 	            
-	            if(!set.contains(s.charAt(j))){
-	                set.add(s.charAt(j++)) ;
-	                ans = Math.max(ans, j-i) ;
+	            if(!set.contains(s.charAt(right))){
+	                set.add(s.charAt(right++)) ;
+	                ans = Math.max(ans, right-left) ;
 	            }else{
-	                set.remove(s.charAt(i++)) ;
+	                set.remove(s.charAt(left++)) ;
 	            }
 	            
 	        }
