@@ -16,7 +16,7 @@ public class FirstUniqueCharacterinaString {
 	 * Memory Usage: 39.8 MB, less than 34.90% of Java online submissions for First Unique Character in a String.
 	 * 
 	 * Time complexity: O(N)
-	 * Space complexity: O(1)
+	 * Space complexity: O(1) because English alphabet contains 26 letters.
 	 * 
 	 */
 	public int firstUniqChar(String s) {
@@ -52,4 +52,30 @@ public class FirstUniqueCharacterinaString {
 		return res == Integer.MAX_VALUE ? -1 : res;
 
 	}
+	/*
+	 * better solution
+	 * 
+	 * Runtime: 21 ms, faster than 59.95% of Java online submissions for First Unique Character in a String.
+	 * Memory Usage: 39.7 MB, less than 34.90% of Java online submissions for First Unique Character in a String.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(1) because English alphabet contains 26 letters.
+	 * 
+	 */
+	public int firstUniqChar2(String s) {
+        HashMap<Character, Integer> count = new HashMap<Character, Integer>();
+        int n = s.length();
+        // build hash map : character and how often it appears
+        for (int i = 0; i < n; i++) {
+            char c = s.charAt(i);
+            count.put(c, count.getOrDefault(c, 0) + 1);
+        }
+        
+        // find the index
+        for (int i = 0; i < n; i++) {
+            if (count.get(s.charAt(i)) == 1) 
+                return i;
+        }
+        return -1;
+    }
 }
