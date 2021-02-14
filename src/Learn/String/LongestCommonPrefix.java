@@ -1,10 +1,12 @@
-package String;
+package Learn.String;
 
 public class LongestCommonPrefix {
 
 	
 	
 	/*
+	 * 14. Longest Common Prefix (Easy)
+	 * 
 	 * https://leetcode.com/explore/learn/card/array-and-string/203/introduction-to-string/1162/
 	 * 
 	 * solution: https://leetcode.com/articles/longest-common-prefix/
@@ -23,6 +25,9 @@ public class LongestCommonPrefix {
 	 * 
 	 * Note:
 	 * All given inputs are in lowercase letters a-z.
+	 * 
+	 * Time complexity : O(S), where S is the sum of all characters in all strings
+	 * Space complexity : O(1)
 	 * 
 	 */
 	
