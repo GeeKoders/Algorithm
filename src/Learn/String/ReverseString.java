@@ -1,9 +1,11 @@
-package String;
+package Learn.String;
 
 public class ReverseString {
 
 	
 	/*
+	 * 344. Reverse String (Easy)
+	 * 
 	 * https://leetcode.com/explore/learn/card/array-and-string/205/array-two-pointer-technique/1183/
 	 * 
 	 * solution: https://leetcode.com/articles/reverse-string/
@@ -21,6 +23,13 @@ public class ReverseString {
 	 * Example 2:
 	 * Input: ["H","a","n","n","a","h"]
 	 * Output: ["h","a","n","n","a","H"]
+	 * 
+	 * Runtime: 1 ms, faster than 96.39% of Java online submissions for Reverse String.
+	 * Memory Usage: 46.2 MB, less than 34.89% of Java online submissions for Reverse String.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(1)
+	 * 
 	 */
 	
 	public static void main(String[] args) {
