@@ -1,7 +1,15 @@
-package String;
+package Learn.String;
 
 public class ReverseWordsInAString {
 
+	/*
+	 * 151. Reverse Words in a String (Medium)
+	 * 
+	 * https://leetcode.com/problems/reverse-words-in-a-string/
+	 * 
+	 * solution: https://leetcode.com/problems/reverse-words-in-a-string/solution/
+	 * 
+	 */
 	public static void main(String[] args) {
 		ReverseWordsInAString reverseWordsInAString = new ReverseWordsInAString() ;
 		String result = reverseWordsInAString.reverseWords3("a good   example") ;
@@ -35,7 +43,11 @@ public class ReverseWordsInAString {
         split[i] = split[j].trim() ;
         split[j] = tmp ;
     }
-    // runtime beats 10.31%
+    /* 
+     * Runtime: 13 ms, faster than 18.81% of Java online submissions for Reverse Words in a String.
+     * Memory Usage: 39.4 MB, less than 47.23% of Java online submissions for Reverse Words in a String.
+     *
+     */
     public String reverseWords2(String s) {
         
     	String[] split = s.split("\\s+");
