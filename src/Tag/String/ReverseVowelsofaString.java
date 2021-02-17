@@ -19,6 +19,9 @@ public class ReverseVowelsofaString {
 	 * 
 	 */
 	public String reverseVowels(String s) {
+		
+		if(s == null || s.length() == 0) return "" ;
+		
 		Set<Character> set = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o',
 				'u', 'A', 'E', 'I', 'O', 'U'));
 
