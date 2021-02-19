@@ -14,6 +14,10 @@ public class FlipGameII {
 	 * 
 	 * https://leetcode.com/problems/flip-game-ii/discuss/73962/Share-my-Java-backtracking-solution
 	 * 
+	 * reference:
+	 * 
+	 * https://www.youtube.com/watch?v=rjOTv7dzqC8&ab_channel=KevinNaughtonJr.
+	 * 
 	 * Runtime: 92 ms, faster than 32.72% of Java online submissions for Flip Game II.
 	 * Memory Usage: 39.5 MB, less than 52.76% of Java online submissions for Flip Game II.
 	 * 
