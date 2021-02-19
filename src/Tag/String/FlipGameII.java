@@ -1,5 +1,8 @@
 package Tag.String;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FlipGameII {
 
 	/*
@@ -35,4 +38,32 @@ public class FlipGameII {
         
         
     }
+	
+	/*
+	 * HashMap
+	 * 
+	 * Runtime: 11 ms, faster than 73.04% of Java online submissions for Flip Game II.
+	 * Memory Usage: 40.3 MB, less than 24.88% of Java online submissions for Flip Game II.
+	 * 
+	 */
+	public boolean canWin2(String s) {
+	    if(s == null || s.length() < 2) return false;
+	    Map<String, Boolean> map = new HashMap<>();
+	    return canWin2(s, map);
+	}
+
+	public boolean canWin2(String s, Map<String, Boolean> map){
+	    if(map.containsKey(s)) return map.get(s);
+	    for(int i = 0; i < s.length() - 1; i++) {
+	        if(s.charAt(i) == '+' && s.charAt(i + 1) == '+') {
+	            String opponent = s.substring(0, i) + "--" + s.substring(i + 2);
+	            if(!canWin2(opponent, map)) {
+	                map.put(s, true);
+	                return true;
+	            }
+	        }
+	    }
+	    map.put(s, false);
+	    return false;
+	}
 }
