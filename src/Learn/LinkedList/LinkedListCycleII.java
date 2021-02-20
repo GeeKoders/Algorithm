@@ -1,8 +1,17 @@
-package LinkedList;
+package Learn.LinkedList;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class LinkedListCycleII {
 
 	/*
+	 * 142. Linked List Cycle II (Medium)
+	 * 
+	 * https://leetcode.com/problems/linked-list-cycle-ii/
+	 * 
+	 * solution: https://leetcode.com/problems/linked-list-cycle-ii/solution/
+	 * 
 	 * Given a linked list, return the node where the cycle begins. If there is
 	 * no cycle, return null.
 	 * 
@@ -18,20 +27,26 @@ public class LinkedListCycleII {
 	 * Explanation: There is a cycle in the linked list, where tail
 	 * connects to the second node.
 	 */
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	class ListNode{
+		
+		int val ;
+		ListNode next ;
+		public ListNode(int val){
+			this.val = val ;
+		}
+		
 	}
 
-	public CycleListIINode detectCycle(CycleListIINode head) {
+	
+	public ListNode detectCycle(ListNode head) {
 
 		if (head == null || head.next == null) {
 			return null;
 		}
 
-		CycleListIINode slowPointer = head;
-		CycleListIINode fastPointer = head;
+		ListNode slowPointer = head;
+		ListNode fastPointer = head;
 
 		do {
 
@@ -51,15 +66,31 @@ public class LinkedListCycleII {
 
 		return slowPointer;
 	}
+	
+	/*
+	 * 
+	 * Runtime: 3 ms, faster than 24.85% of Java online submissions for Linked List Cycle II.
+	 * Memory Usage: 40 MB, less than 26.39% of Java online submissions for Linked List Cycle II.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 * 
+	 */
+	public ListNode detectCycle2(ListNode head) {
+	    
+		Set<ListNode> visited = new HashSet<ListNode>();
 
-}
+        ListNode node = head;
+        while (node != null) {
+            if (visited.contains(node)) {
+                return node;
+            }
+            visited.add(node);
+            node = node.next;
+        }
 
-class CycleListIINode {
-	public int val;
-	public CycleListIINode next;
+        return null;
+        
+    }
 
-	public CycleListIINode(int x) {
-		this.val = x;
-		this.next = null;
-	}
 }
