@@ -1,10 +1,14 @@
-package LinkedList;
+package Learn.LinkedList;
 
 public class ReverseLinkedList {
 
 	
 	/*
-	 * Reverse a singly linked list.
+	 * 206. Reverse Linked List (Easy)
+	 * 
+	 * https://leetcode.com/problems/reverse-linked-list/
+	 * 
+	 * https://leetcode.com/problems/reverse-linked-list/solution/
 	 * 
 	 * Example:
 	 * Input: 1->2->3->4->5->NULL
@@ -13,29 +17,18 @@ public class ReverseLinkedList {
 	 * Follow up:
 	 * A linked list can be reversed either iteratively or recursively. Could you implement both?
 	 * 
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
-	/**
-	 * Definition for singly-linked list.
-	 * public class ListNode {
-	 *     int val;
-	 *     ListNode next;
-	 *     ListNode() {}
-	 *     ListNode(int val) { this.val = val; }
-	 *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-	 * }
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Reverse Linked List.
+	 * Memory Usage: 38.5 MB, less than 86.52% of Java online submissions for Reverse Linked List.
 	 * 
-	 * Time Complexity O(N)
-	 * Space Complexity O(1)
+	 * Time complexity: O(N)
+	 * Space complexity: O(1)
 	 * 
 	 */
 
 	public ListNode solution1(ListNode head) {
 
+		if(head == null) return head ;
+		
 		ListNode current = head ;
         ListNode prev = null ;
         ListNode r = null ;
@@ -53,24 +46,25 @@ public class ReverseLinkedList {
         
         return head ;
 	}
+	
+	class ListNode {
+		
+		int val;
+		
+		ListNode next;
+
+		ListNode() {
+		}
+
+		ListNode(int val) {
+			this.val = val;
+		}
+
+		ListNode(int val, ListNode next) {
+			this.val = val;
+			this.next = next;
+		}
+	}
 
 }
 
-class ListNode {
-	
-	int val;
-	
-	ListNode next;
-
-	ListNode() {
-	}
-
-	ListNode(int val) {
-		this.val = val;
-	}
-
-	ListNode(int val, ListNode next) {
-		this.val = val;
-		this.next = next;
-	}
-}
