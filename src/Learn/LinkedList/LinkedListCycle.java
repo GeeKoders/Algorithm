@@ -1,4 +1,4 @@
-package LinkedList;
+package Learn.LinkedList;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,6 +6,12 @@ import java.util.Set;
 public class LinkedListCycle {
 
 	/*
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Linked List Cycle. (Easy)
+	 * 
+	 * https://leetcode.com/problems/linked-list-cycle/submissions/
+	 * 
+	 * solution: https://leetcode.com/problems/linked-list-cycle/solution/
+	 * 
 	 * Given a linked list, determine if it has a cycle in it.
 	 * 
 	 * To represent a cycle in the given linked list, we use an integer pos
@@ -48,7 +54,14 @@ public class LinkedListCycle {
 	    return false;
 	}
 	
-	//time complexity:O(N), space complexity:O(1)
+	/*
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Linked List Cycle.
+	 * Memory Usage: 39.8 MB, less than 40.52% of Java online submissions for Linked List Cycle.
+	 * 
+	 * Time complexity:O(N)
+	 * Space complexity:O(1)
+	 * 
+	 */
 	public boolean solution2(CycleListNode head) {
 		
 		CycleListNode slowPoiner = head ;
