@@ -1,4 +1,4 @@
-package Hash;
+package Learn.Hash;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,6 +7,9 @@ public class IsomorphicStrings {
 
 	
 	/*
+	 * 
+	 * 205. Isomorphic Strings (Easy)
+	 * 
 	 * https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1117/
 	 * 
 	 * Given two strings s and t, determine if they are isomorphic.
@@ -36,7 +39,14 @@ public class IsomorphicStrings {
 		// TODO Auto-generated method stub
 
 	}
-	
+	/*
+	 * Runtime: 6 ms, faster than 75.80% of Java online submissions for Isomorphic Strings.
+	 * Memory Usage: 39.1 MB, less than 59.33% of Java online submissions for Isomorphic Strings.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 * 
+	 */
 	public boolean isIsomorphic(String s, String t) {
         
         if(s.length() != t.length()) return false ;
