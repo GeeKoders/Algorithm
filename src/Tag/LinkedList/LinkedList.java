@@ -14,8 +14,12 @@ public class LinkedList {
 		linkedList.insertTail(1);
 		linkedList.insertTail(2);
 		linkedList.insertTail(3);
-		linkedList.insertMiddle(4, 2);
-		linkedList.insertMiddle(5, 4);
+//		linkedList.insertMiddle(4, 2);
+//		linkedList.insertMiddle(5, 4);
+		
+//		linkedList.delete(1);
+//		linkedList.delete(2);
+		linkedList.delete(2);
 		linkedList.traversal();
 	}
 	
@@ -60,6 +64,7 @@ public class LinkedList {
 				
 				
 				if(cur.next.val == after){
+					
 					newNode.next = cur.next.next ;
 					cur.next.next = newNode ;
 				}
@@ -103,9 +108,41 @@ public class LinkedList {
 		}
 	}
 	
-	
-	
-	
-	
-	
+	public void delete(int data){
+		
+		Node dummy = new Node(-1) ;
+		dummy.next = head ;
+		
+		
+		
+		if(head == null){
+			System.out.println("No items to delete");
+		}else{
+			
+			
+			if(head.val == data){
+				dummy.next = head.next ;
+				head = head.next ;
+			}else{
+				Node cur = head ;
+				Node prev = null ;
+				
+				boolean dataFound = false ;
+				
+				while(cur != null && cur.next != null){
+					
+					prev = cur ;
+					cur = cur.next ;
+					if(cur.val == data){
+						dataFound = true ;
+						prev.next = cur.next ;
+					}
+				}
+				
+				if(!dataFound){
+					System.out.println("No items to delete");
+				}
+			}
+		}
+	}
 }
