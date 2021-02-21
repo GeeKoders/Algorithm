@@ -47,4 +47,23 @@ public class RemoveDuplicatesfromSortedList {
 
 		return head;
 	}
+	/*
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Remove Duplicates from Sorted List.
+	 * Memory Usage: 38.3 MB, less than 77.27% of Java online submissions for Remove Duplicates from Sorted List.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(1)
+	 * 
+	 */
+	public ListNode deleteDuplicates2(ListNode head) {
+	    ListNode current = head;
+	    while (current != null && current.next != null) {
+	        if (current.next.val == current.val) {
+	            current.next = current.next.next;
+	        } else {
+	            current = current.next;
+	        }
+	    }
+	    return head;
+	}
 }
