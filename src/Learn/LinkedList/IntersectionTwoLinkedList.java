@@ -17,7 +17,7 @@ public class IntersectionTwoLinkedList {
 	 * 160. Intersection of Two Linked Lists (Easy)
 	 * 
 	 * https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1215/
-	 * 
+	 * .
 	 * solution: https://leetcode.com/problems/intersection-of-two-linked-lists/solution/
 	 * 
 	 * Runtime: 1 ms, faster than 97.80% of Java online submissions for Intersection of Two Linked Lists.
