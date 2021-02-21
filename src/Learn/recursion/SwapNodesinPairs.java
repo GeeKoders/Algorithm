@@ -73,9 +73,31 @@ public class SwapNodesinPairs {
 		ListNode third = second.next;
 
 		second.next = head;
-		head.next = swapPairs(third);
+		head.next = swapPairs2(third);
 
 		return second;
 	}
+	/*
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Swap Nodes in Pairs.
+	 * Memory Usage: 36.7 MB, less than 32.48% of Java online submissions for Swap Nodes in Pairs.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 * 
+	 */
+	public ListNode swapPairs3(ListNode head) {
+		 if(head == null || head.next == null) return head ;
+	        
+	        ListNode first = head ;
+	        ListNode second = head.next ;
+	        
+	        
+	        first.next = swapPairs3(second.next) ;
+	        second.next = first ;
+	        
+	        return second ;
+	}
+	
+	
 
 }
