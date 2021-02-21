@@ -1,9 +1,13 @@
-package LinkedList;
+package Learn.LinkedList;
 
 public class OddEvenLinkedList {
 
 	/*
+	 * 328. Odd Even Linked List (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/linked-list/219/classic-problems/1208/
+	 * 
+	 * solution: https://leetcode.com/problems/odd-even-linked-list/solution/
 	 * 
 	 * Given a singly linked list, group all odd nodes together followed by the
 	 * even nodes. Please note here we are talking about the node number and not
@@ -26,14 +30,26 @@ public class OddEvenLinkedList {
 	 * The first node is considered odd, the second node even and so on ...
 	 * The length of the linked list is between [0, 10^4].
 	 * 
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Odd Even Linked List.
+	 * Memory Usage: 38.2 MB, less than 97.15% of Java online submissions for Odd Even Linked List.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(1)
+	 * 
 	 */
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+	class ListNode{
+		
+		int val ;
+		ListNode next ;
+		
+		public ListNode(int val){
+			this.val = val ;
+		}
+		
 	}
 
-	// time complexity:O(N), space complexity:O(1)
 	public ListNode oddEvenList(ListNode head) {
 
 		if (head == null)
