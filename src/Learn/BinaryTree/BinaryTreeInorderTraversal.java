@@ -1,4 +1,4 @@
-package BinaryTree;
+package Learn.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,10 @@ import java.util.Stack;
 public class BinaryTreeInorderTraversal {
 
 	/*
+	 * 94. Binary Tree Inorder Traversal (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/queue-stack/232/practical-application-stack/1383/
+	 * 
 	 * solution: https://leetcode.com/problems/binary-tree-inorder-traversal/solution/
 	 * 
 	 * Given a binary tree, return the inorder traversal of its nodes' values.
@@ -23,11 +26,26 @@ public class BinaryTreeInorderTraversal {
 	 *  
 	 */
 	
-	
-	public static void main(String[] args) {
-
+	class TreeNode {
+		int val;
+		TreeNode left;
+		TreeNode right;
+		TreeNode() {}
+		TreeNode(int val) { this.val = val; }
+		TreeNode(int val, TreeNode left, TreeNode right) {
+			this.val = val;
+			this.left = left;
+			this.right = right;
+		}
 	}
-	
+	/*
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Tree Inorder Traversal.
+	 * Memory Usage: 37.3 MB, less than 48.80% of Java online submissions for Binary Tree Inorder Traversal.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 * 
+	 */
 	public List<Integer> inorderTraversal(TreeNode root) {
         
         List<Integer> result = new ArrayList<>() ;
@@ -103,15 +121,4 @@ public class BinaryTreeInorderTraversal {
 	
 }
 
-class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
-	TreeNode() {}
-	TreeNode(int val) { this.val = val; }
-	TreeNode(int val, TreeNode left, TreeNode right) {
-		this.val = val;
-		this.left = left;
-		this.right = right;
-	}
-}
+
