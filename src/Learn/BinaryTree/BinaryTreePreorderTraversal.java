@@ -62,7 +62,7 @@ public class BinaryTreePreorderTraversal {
      * Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Tree Preorder Traversal.
      * Memory Usage: 37.2 MB, less than 65.93% of Java online submissions for Binary Tree Preorder Traversal.
      * 
-     * Time complexity: O(logN)
+     * Time complexity: O(N)
      * Space complexity: O(N)
      * 
      */
