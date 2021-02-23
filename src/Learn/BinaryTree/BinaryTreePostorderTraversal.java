@@ -1,4 +1,4 @@
-package BinaryTree;
+package Learn.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,11 @@ import java.util.List;
 public class BinaryTreePostorderTraversal {
 
 	/*
+	 * 145. Binary Tree Postorder Traversal (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/930/
+	 * 
+	 * solution: https://leetcode.com/problems/binary-tree-postorder-traversal/solution/
 	 * 
 	 * Given the root of a binary tree, return the postorder traversal of its nodes' values.
 	 * 
@@ -37,11 +41,25 @@ public class BinaryTreePostorderTraversal {
 	 * -100 <= Node.val <= 100
 	 * 
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+	class TreeNode{
+		
+		int val ;
+		TreeNode left ;
+		TreeNode right ;
+		public TreeNode(int val){
+			this.val = val ;
+		}
+		
 	}
-	
+	/*
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Tree Postorder Traversal.
+	 * Memory Usage: 37.3 MB, less than 48.81% of Java online submissions for Binary Tree Postorder Traversal.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 * 
+	 */
 	private List<Integer> res ;
     
     public List<Integer> postorderTraversal(TreeNode root) {
