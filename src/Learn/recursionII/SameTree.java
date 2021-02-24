@@ -1,4 +1,4 @@
-package recursionII;
+package Learn.recursionII;
 
 import java.util.ArrayDeque;
 import java.util.LinkedList;
@@ -14,7 +14,6 @@ public class SameTree {
 
 	}
 
-	// recursive
 	/*
 	 * 100. Same Tree(Easy)
 	 * 
@@ -22,13 +21,13 @@ public class SameTree {
 	 * 
 	 * solution: https://leetcode.com/problems/same-tree/solution/
 	 * 
-	 *  60 / 60 test cases passed.
-		Status: Accepted
-		Runtime: 0 ms (Your memory usage beats 34.72 % of java submissions.)
-		Memory Usage: 36.5 MB 
-	 * 
-	 * 
-	 * 
+	 * solution: https://leetcode.com/problems/same-tree/solution/
+	 * Memory Usage: 36.6 MB, less than 28.67% of Java online submissions for Same Tree.
+	 *
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Same Tree.
+	 *  
+	 * Time complexity: O(N)
+	 * Space complexity: O(logN), the worst case is O(N)
 	 * 
 	 */
 	public boolean isSameTree(TreeNode p, TreeNode q) {
