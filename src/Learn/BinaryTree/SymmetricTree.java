@@ -1,4 +1,4 @@
-package BinaryTree;
+package Learn.BinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -7,6 +7,7 @@ public class SymmetricTree {
 
 	
 	/*
+	 * 101. Symmetric Tree (Easy)
 	 * https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/536/
 	 * solution: https://leetcode.com/problems/symmetric-tree/solution/
 	 * 
@@ -31,9 +32,17 @@ public class SymmetricTree {
 	 * 
 	 * 
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+	class TreeNode{
+		
+		int val ;
+		TreeNode left ;
+		TreeNode right ;
+		
+		public TreeNode(int val){
+			this.val = val ;
+		}
+		
 	}
 
 	//O(N), O(N)
@@ -51,7 +60,14 @@ public class SymmetricTree {
         return t1.val == t2.val && isMirror(t1.left, t2.right) && isMirror(t1.right, t2.left) ;
         
     }
-    //O(N), O(N)
+    /*
+     * Runtime: 1 ms, faster than 29.99% of Java online submissions for Symmetric Tree.
+     * Memory Usage: 38.6 MB, less than 21.30% of Java online submissions for Symmetric Tree.
+     * 
+     * Time complexity: O(N)
+     * Space complexity: O(N)
+     * 
+     */
     public boolean isSymmetric2(TreeNode root){
     	
     	Queue<TreeNode> q = new LinkedList<>() ;
