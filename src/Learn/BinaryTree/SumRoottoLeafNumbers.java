@@ -1,5 +1,9 @@
 package Learn.BinaryTree;
 
+import java.util.Stack;
+
+import javafx.util.Pair;
+
 public class SumRoottoLeafNumbers {
 
 	class TreeNode {
@@ -55,4 +59,48 @@ public class SumRoottoLeafNumbers {
 		}
 
 	}
+	/*
+	 * DFS
+	 * 
+	 * Runtime: 1 ms, faster than 28.21% of Java online submissions for Sum Root to Leaf Numbers.
+	 * Memory Usage: 36.9 MB, less than 30.13% of Java online submissions for Sum Root to Leaf Numbers.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(H)
+	 * 
+	 */
+	public int sumNumbers2(TreeNode root) {
+        
+        int sum = 0 ;
+        int cur = 0 ;
+        Stack<Pair<TreeNode, Integer>> stack = new Stack<>() ;
+        stack.push(new Pair(root, 0)) ;
+        
+        while(!stack.empty()){
+            
+            Pair<TreeNode, Integer> p = stack.pop() ;
+            root = p.getKey() ;
+            cur = p.getValue() ;
+            
+            if(root != null){
+                
+                cur = cur * 10 + root.val ;
+                
+                if(root.left == null && root.right == null){
+                    sum += cur ;
+                }else{
+                    stack.push(new Pair(root.left, cur)) ;
+                    stack.push(new Pair(root.right, cur)) ;
+                }
+                
+            }
+            
+            
+        }
+              
+        return sum ; 
+        
+        
+    }
+	
 }
