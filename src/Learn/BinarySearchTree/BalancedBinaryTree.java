@@ -1,4 +1,4 @@
-package BinarySearchTree;
+package Learn.BinarySearchTree;
 
 public class BalancedBinaryTree {
 
@@ -15,14 +15,17 @@ public class BalancedBinaryTree {
 	}
 
 	/*
+	 * 110. Balanced Binary Tree
+	 * 
 	 * https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/143/appendix-height-balanced-bst/1027/
 	 * 
 	 * solution: https://leetcode.com/problems/balanced-binary-tree/solution/
 	 * 
-		228 / 228 test cases passed.
-		Status: Accepted
-		Runtime: 1 ms
-		Memory Usage: 39.3 MB
+	 * Runtime: 1 ms, faster than 45.90% of Java online submissions for Balanced Binary Tree.
+	 * Memory Usage: 38.8 MB, less than 88.13% of Java online submissions for Balanced Binary Tree.
+	 * 
+	 * Time complexity: O(NlogN) Please reference the solution.
+	 * Space complexity: O(N)
 	 * 
 	 */
 	public boolean isBalanced(TreeNode root) {
