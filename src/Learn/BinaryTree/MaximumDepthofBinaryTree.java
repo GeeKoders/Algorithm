@@ -1,10 +1,14 @@
-package BinaryTree;
+package Learn.BinaryTree;
 
 public class MaximumDepthofBinaryTree {
 
 	
 	/*
+	 * 104. Maximum Depth of Binary Tree (Easy)
+	 * 
 	 * https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/535/
+	 * 
+	 * solution: https://leetcode.com/problems/maximum-depth-of-binary-tree/solution/
 	 * 
 	 * Given a binary tree, find its maximum depth.
 	 * 
@@ -24,9 +28,14 @@ public class MaximumDepthofBinaryTree {
 	 * return its depth = 3.
 	 * 
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+	class TreeNode{
+		int val ;
+		TreeNode left ;
+		TreeNode right ;
+		public TreeNode(int val){
+			this.val = val ;
+		}
 	}
 	
 	public int maxDepth(TreeNode root) {
@@ -37,5 +46,36 @@ public class MaximumDepthofBinaryTree {
        return 1+Math.max(maxDepth(root.left),maxDepth(root.right));
        
    }
+	
+	private int res = 0 ;
+    /*
+     * Runtime: 0 ms, faster than 100.00% of Java online submissions for Maximum Depth of Binary Tree.
+     * Memory Usage: 39 MB, less than 49.45% of Java online submissions for Maximum Depth of Binary Tree.
+     * 
+     * Time complexity: O(N)
+     * Space complexity: O(logN)
+     * 
+     */
+    public int maxDepth2(TreeNode root) {
+        
+        if(root == null) return 0 ;
+        
+        dfs(root, 1) ;
+        return res ;
+    }
+    
+    private void dfs(TreeNode root, int cur){
+        
+        if(root.left == null && root.right == null){
+            res = Math.max(res, cur) ;
+            return ;
+        }
+        
+        if(root.left != null) dfs(root.left, cur+1) ;
+        if(root.right != null) dfs(root.right, cur+1) ;
+        
+        
+        
+    }
 
 }
