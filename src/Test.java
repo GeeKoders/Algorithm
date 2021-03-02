@@ -1,5 +1,8 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import javafx.util.Pair;
@@ -21,7 +24,9 @@ public class Test {
 //		
 //		System.out.println(test.findKLarget(nums));
 		
-		test.splitTest();
+//		test.splitTest();
+		
+		test.listTest();
 		
 	}
 	
@@ -99,6 +104,25 @@ public class Test {
 		}
 		System.out.println("length:" + arr.length);
 		System.out.println(sb.substring(0, sb.length() - 1));
+	}
+	
+	private void listTest(){
+		
+		LinkedList<Integer> list = new LinkedList<>() ;
+		
+		list.add(1) ;
+		list.add(2) ;
+		list.add(3) ;
+		list.add(4) ;
+		list.add(5) ;
+		
+		list.add(0, 6) ;
+		list.add(1, 7) ;
+		list.addFirst(9) ;
+		for(int item: list){
+			System.out.println(item);
+		}
+		
 	}
 
 }
