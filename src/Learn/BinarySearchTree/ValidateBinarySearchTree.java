@@ -1,4 +1,4 @@
-package BinarySearchTree;
+package Learn.BinarySearchTree;
 
 import java.util.Stack;
 
@@ -15,6 +15,8 @@ public class ValidateBinarySearchTree {
 	}
 
 	/*
+	 * 98. Validate Binary Search Tree (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/140/introduction-to-a-bst/997
 	 * 
 	 * solution:
@@ -86,6 +88,24 @@ public class ValidateBinarySearchTree {
 		}
 		return true ;
 	}
+	/*
+	 * 
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Validate Binary Search Tree.
+	 * Memory Usage: 38.9 MB, less than 34.76% of Java online submissions for Validate Binary Search Tree.
+	 * 
+	 * 
+	 */
+	public boolean isValidBST4(TreeNode root) {
+        //time:O(n)  space:O(h)
+        if (root == null)  return false;
+        return dfs(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+    
+    private boolean dfs(TreeNode root, long min, long max) {
+        if (root == null)  return true;
+        if (root.val <= min || root.val >= max)  return false;
+        return dfs(root.left, min, root.val) && dfs(root.right, root.val, max);
+    }
 	
 	
 }
