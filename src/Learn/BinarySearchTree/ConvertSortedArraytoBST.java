@@ -1,4 +1,4 @@
-package BinarySearchTree;
+package Learn.BinarySearchTree;
 
 public class ConvertSortedArraytoBST {
 
@@ -15,14 +15,14 @@ public class ConvertSortedArraytoBST {
 	
 	
 	/*
+	 * 108. Convert Sorted Array to Binary Search Tree (Easy)
+	 * 
 	 * https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/143/appendix-height-balanced-bst/1015/
 	 * 
 	 * solution: https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/solution/
 	 * 
-	 *  32 / 32 test cases passed.
-		Status: Accepted
-		Runtime: 0 ms
-		Memory Usage: 38.7 MB
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Convert Sorted Array to Binary Search Tree.
+	 * Memory Usage: 40.7 MB, less than 16.44% of Java online submissions for Convert Sorted Array to Binary Search Tree.
 	 * 
 	 * Time complexity: O(N)
 	 * Space complexity: O(N)
