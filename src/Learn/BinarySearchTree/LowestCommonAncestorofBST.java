@@ -1,4 +1,4 @@
-package BinarySearchTree;
+package Learn.BinarySearchTree;
 
 public class LowestCommonAncestorofBST {
 	class TreeNode {
@@ -14,6 +14,8 @@ public class LowestCommonAncestorofBST {
 	}
 	
 	/*
+	 * 235. Lowest Common Ancestor of a Binary Search Tree (Easy)
+	 * 
 	 * https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/142/conclusion/1012/
 	 * 
 	 * solution: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/solution/
@@ -50,10 +52,8 @@ public class LowestCommonAncestorofBST {
 	
 	/*
 	 * 
-		27 / 27 test cases passed.
-		Status: Accepted
-		Runtime: 3 ms
-		Memory Usage: 40.1 MB
+	 * Runtime: 6 ms, faster than 21.00% of Java online submissions for Lowest Common Ancestor of a Binary Search Tree.
+	 * Memory Usage: 47.1 MB, less than 9.14% of Java online submissions for Lowest Common Ancestor of a Binary Search Tree.
 	 * 
 	 * iteratively
 	 * Time complexity: O(N)
