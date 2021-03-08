@@ -62,4 +62,24 @@ public class ClosestBinarySearchTreeValue {
 		return res;
 
 	}
+	/*
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Closest Binary Search Tree Value.
+	 * Memory Usage: 38.8 MB, less than 74.69% of Java online submissions for Closest Binary Search Tree Value.
+	 * 
+	 * Time complexity: O(H)
+	 * Space complexity: O(1)
+	 * 
+	 */
+	public int closestValue2(TreeNode root, double target) {
+		
+		int res = root.val;   
+	    while(root != null){
+	        if(Math.abs(target - root.val) < Math.abs(target - res)){
+	            res = root.val;
+	        }      
+	        root = root.val > target? root.left: root.right;
+	    }     
+	    return res;
+		
+	}
 }
