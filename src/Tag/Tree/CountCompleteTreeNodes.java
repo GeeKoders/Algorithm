@@ -51,5 +51,9 @@ public class CountCompleteTreeNodes {
 			helper(root.right, list);
 
 	}
+	
+	public int countNodes2(TreeNode root) {
+	    return root != null ? 1 + countNodes2(root.right) + countNodes2(root.left) : 0;
+	}
 
 }
