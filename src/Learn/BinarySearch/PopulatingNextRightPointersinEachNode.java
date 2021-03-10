@@ -1,10 +1,17 @@
-package BinarySearch;
+package Learn.BinarySearch;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class PopulatingNextRightPointersinEachNode {
 
 	
 	/*
+	 * 116. Populating Next Right Pointers in Each Node (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/994
+	 * 
+	 * solution: https://leetcode.com/problems/populating-next-right-pointers-in-each-node/solution/
 	 * 
 	 * You are given a perfect binary tree where all leaves are on the same level, and every parent has two children. The binary tree has the following definition:
 	 * 
@@ -31,10 +38,6 @@ public class PopulatingNextRightPointersinEachNode {
 	 *  -1000 <= node.val <= 1000
 	 *  
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 	//Time Limit Exceeded
 	public Node connect(Node root) {
 
@@ -77,7 +80,47 @@ public class PopulatingNextRightPointersinEachNode {
 	        return root;
 	        
 	}
-
+	/*
+	 * Runtime: 2 ms, faster than 45.35% of Java online submissions for Populating Next Right Pointers in Each Node.
+	 * Memory Usage: 39.1 MB, less than 70.19% of Java online submissions for Populating Next Right Pointers in Each Node.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 * 
+	 */
+	public Node connect3(Node root) {
+        
+	      if(root == null) return root;
+	        
+	      Queue<Node> queue = new LinkedList<>() ;
+	        
+	        queue.add(root) ;
+	        
+	        while(!queue.isEmpty()){
+	            
+	            int n = queue.size() ;
+	            
+	            for(int i=0; i<n; i++){
+	                Node cur = queue.poll() ;
+	                if(i < n - 1){
+	                    cur.next = queue.peek() ;
+	                }
+	                
+	                
+	                
+	                if(cur.left != null) queue.add(cur.left) ;
+	                
+	                if(cur.right != null) queue.add(cur.right) ;
+	                    
+	            }
+	            
+	            
+	        }
+	        
+	        return root ;        
+	       
+	        
+	    }
 }
 
 class Node {
