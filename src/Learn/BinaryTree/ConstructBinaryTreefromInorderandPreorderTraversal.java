@@ -1,8 +1,23 @@
-package BinaryTree;
+package Learn.BinaryTree;
 
 public class ConstructBinaryTreefromInorderandPreorderTraversal {
 
+	class TreeNode{
+		int val ; 
+		TreeNode left ;
+		TreeNode right ;
+		public TreeNode(int val){
+			this.val = val ;
+		}
+	}
+	
 	/*
+	 * 105. Construct Binary Tree from Preorder and Inorder Traversal (Medium)
+	 * 
+	 * https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+	 * 
+	 * solution: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/solution/
+	 * 
 	 * Given preorder and inorder traversal of a tree, construct the binary tree.
 	 * 
 	 * Note:
@@ -22,11 +37,6 @@ public class ConstructBinaryTreefromInorderandPreorderTraversal {
 	 * 
 	 * 
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-	
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
         return helper(0, 0, inorder.length - 1, preorder, inorder) ;
     }
@@ -48,6 +58,9 @@ public class ConstructBinaryTreefromInorderandPreorderTraversal {
 	 * the left child which one is the right, and this is why we need inorder array)
 	 * 
 	 * numsOnLeft = root - inStart
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(H)
 	 * 
 	 */
 	public TreeNode helper(int preStart, int inStart, int inEnd, int[] preorder, int []inorder){
