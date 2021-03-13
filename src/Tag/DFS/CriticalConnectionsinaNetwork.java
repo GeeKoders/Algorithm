@@ -14,6 +14,8 @@ public class CriticalConnectionsinaNetwork {
 	 * 
 	 * solution: https://leetcode.com/problems/critical-connections-in-a-network/solution/
 	 * 
+	 * reference: https://www.youtube.com/watch?v=kYcUIEQqL2Y&ab_channel=happygirlzt
+	 * 
 	 * Runtime: 89 ms, faster than 83.48% of Java online submissions for Critical Connections in a Network.
 	 * Memory Usage: 104 MB, less than 66.60% of Java online submissions for Critical Connections in a Network.
 	 * 
