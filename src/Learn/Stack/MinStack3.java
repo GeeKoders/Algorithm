@@ -1,10 +1,27 @@
-package Stack;
+package Learn.Stack;
 
 import java.util.Stack;
 
-// your runtime beats 75.84% of java submissions
+
 public class MinStack3 {
+
 	
+	/*
+	 * 155. Min Stack (Easy)
+	 * 
+	 * https://leetcode.com/problems/min-stack/
+	 * 
+	 * solution: https://leetcode.com/problems/min-stack/solution/
+	 * 
+	 * Runtime: 5 ms, faster than 58.98% of Java online submissions for Min Stack.
+     * Memory Usage: 40.6 MB, less than 72.44% of Java online submissions for Min Stack.
+	 * 
+	 * 
+	 * Time complexity: O(1)
+	 * Space complexity: O(N)
+	 * 
+	 * 
+	 */
 	Stack<Integer> stack ;
 	Stack<Integer> minStack ;
 
