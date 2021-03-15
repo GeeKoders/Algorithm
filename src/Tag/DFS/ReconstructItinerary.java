@@ -53,7 +53,14 @@ public class ReconstructItinerary {
 
 	}
 
-	private void buildGraph(List<List<String>> tickets,
+	/*
+	 * iterative
+	 * 
+	 * Runtime: 4 ms, faster than 99.64% of Java online submissions for Reconstruct Itinerary.
+	 * Memory Usage: 39.4 MB, less than 93.82% of Java online submissions for Reconstruct Itinerary.
+	 * 
+	 */
+	private void buildGraph2(List<List<String>> tickets,
 			Map<String, PriorityQueue<String>> g) {
 
 		for (List<String> travel : tickets) {
@@ -70,4 +77,44 @@ public class ReconstructItinerary {
 		}
 
 	}
+	
+	public List<String> findItinerary2(List<List<String>> tickets) {
+        
+        List<String> res = new ArrayList<>() ;
+        Map<String, PriorityQueue<String>> g = new HashMap<>() ;
+        buildGraph2(tickets, g) ;
+        dfs(g, res, "JFK") ;
+        
+        return res ;
+    }
+    
+    private void dfs(Map<String, PriorityQueue<String>> g, List<String> res, String from){
+        
+        PriorityQueue<String> arrivals = g.get(from) ;
+        while(arrivals != null && !arrivals.isEmpty()){
+            String to = arrivals.poll() ;
+            dfs(g, res, to) ;
+        }
+        
+        res.add(0, from) ;
+        
+    }
+    
+    private void buildGraph(List<List<String>> tickets, Map<String, PriorityQueue<String>> g){
+        
+        for(List<String> travel: tickets){
+            
+            String from = travel.get(0) ;
+            String to = travel.get(1) ;
+            
+            if(!g.containsKey(from)){
+                g.put(from, new PriorityQueue<>()) ;
+            }
+            
+            g.get(from).offer(to) ;
+            
+        }
+        
+        
+    }
 }
