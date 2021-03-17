@@ -1,4 +1,4 @@
-package Stack;
+package Learn.Stack;
 
 import java.util.Stack;
 
@@ -6,7 +6,11 @@ public class DecodeString {
 
 	
 	/*
+	 * 394. Decode String (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/queue-stack/239/conclusion/1379/
+	 * 
+	 * solution: https://leetcode.com/problems/decode-string/solution/
 	 * 
 	 * Given an encoded string, return its decoded string.
 	 * 
@@ -34,6 +38,8 @@ public class DecodeString {
 	 * Input: s = "abc3[cd]xyz"
 	 * Output: "abccdcdcdxyz"
 	 * 
+	 * Time complexity: O(maxK*n), where maxK is the maximum value of k and n is the length of a given string s.
+	 * Space complexity: O(m + n), where m is the number of letters(a-z) and n is the number of digits(0-9) in string s
 	 * 
 	 */
 	public static void main(String[] args) {
