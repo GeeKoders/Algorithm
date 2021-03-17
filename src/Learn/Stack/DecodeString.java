@@ -38,6 +38,9 @@ public class DecodeString {
 	 * Input: s = "abc3[cd]xyz"
 	 * Output: "abccdcdcdxyz"
 	 * 
+	 * Runtime: 5 ms, faster than 23.26% of Java online submissions for Decode String.
+	 * Memory Usage: 37.1 MB, less than 66.17% of Java online submissions for Decode String.
+	 * 
 	 * Time complexity: O(maxK*n), where maxK is the maximum value of k and n is the length of a given string s.
 	 * Space complexity: O(m + n), where m is the number of letters(a-z) and n is the number of digits(0-9) in string s
 	 * 
