@@ -1,4 +1,4 @@
-package Queue;
+package Learn.Queue;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -7,6 +7,8 @@ public class ImplementStackUsingQueues {
 
 	
 	/*
+	 * 225. Implement Stack using Queues (Easy)
+	 * 
 	 * https://leetcode.com/explore/learn/card/queue-stack/239/conclusion/1387/
 	 * solution: https://leetcode.com/problems/implement-stack-using-queues/solution/
 	 * 
@@ -32,6 +34,9 @@ public class ImplementStackUsingQueues {
 	 * 
 	 * You may assume that all operations are valid (for example, no pop or top operations will be called on an
 	 * empty stack).
+	 * 
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Implement Stack using Queues.
+	 * Memory Usage: 36.6 MB, less than 91.51% of Java online submissions for Implement Stack using Queues.
 	 * 
 	 */
 	
