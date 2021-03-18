@@ -1,4 +1,4 @@
-package Stack;
+package Learn.Stack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,11 @@ import java.util.Stack;
 public class EvaluateReversePolishNotation {
 
 	/*
+	 * 150. Evaluate Reverse Polish Notation (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/queue-stack/230/usage-stack/1394/
+	 * 
+	 * solution: https://leetcode.com/problems/evaluate-reverse-polish-notation/solution/
 	 * 
 	 * Evaluate the value of an arithmetic expression in Reverse Polish Notation.
 	 * Valid operators are +, -, *, /. Each operand may be an integer or another expression.
@@ -37,6 +41,13 @@ public class EvaluateReversePolishNotation {
 	 * = (0 + 17) + 5
 	 * = 17 + 5
 	 * = 22
+	 * 
+	 * Runtime: 4 ms, faster than 92.22% of Java online submissions for Evaluate Reverse Polish Notation.
+	 * Memory Usage: 39.1 MB, less than 27.74% of Java online submissions for Evaluate Reverse Polish Notation.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 * 
 	 */
 	
 	public int evalRPN(String[] tokens) {
@@ -75,9 +86,5 @@ public class EvaluateReversePolishNotation {
 		return s.peek() ;
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }
