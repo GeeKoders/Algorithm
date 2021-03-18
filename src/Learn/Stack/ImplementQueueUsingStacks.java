@@ -1,10 +1,16 @@
-package Stack;
+package Learn.Stack;
 
 import java.util.Stack;
 
 public class ImplementQueueUsingStacks {
 
 	/*
+	 * 232. Implement Queue using Stacks (Easy)
+	 * 
+	 * https://leetcode.com/problems/implement-queue-using-stacks/
+	 * 
+	 * solution: https://leetcode.com/problems/implement-queue-using-stacks/solution/
+	 * 
 	 * Implement the following operations of a queue using stacks.
 	 * solution: https://leetcode.com/problems/implement-queue-using-stacks/solution/
 	 * 
@@ -27,6 +33,9 @@ public class ImplementQueueUsingStacks {
 	 * queue), as long as you use only standard operations of a stack.
 	 * 
 	 * You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).
+	 * 
+	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for Implement Queue using Stacks.
+	 * Memory Usage: 36.8 MB, less than 74.70% of Java online submissions for Implement Queue using Stacks.
 	 * 
 	 */
 	
