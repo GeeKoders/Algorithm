@@ -1,4 +1,4 @@
-package recursionII;
+package Learn.recursionII;
 
 import java.util.Stack;
 
@@ -46,5 +46,57 @@ public class LargestRectangleinHistogram {
         return max ;
         
     }
+	
+	/*
+	 * 
+	 * reference: https://www.youtube.com/watch?v=KkJrGxuQtYo&ab_channel=basketwangCoding
+	 * 
+	 * Runtime: 29 ms, faster than 39.63% of Java online submissions for Largest Rectangle in Histogram.
+	 * Memory Usage: 50.3 MB, less than 23.89% of Java online submissions for Largest Rectangle in Histogram.
+	 * 
+	 * Time complexity: O(N)
+	 * Space complexity: O(N)
+	 * 
+	 */
+	 public int largestRectangleArea2(int[] heights) {
+	       if(heights == null || heights.length == 0) return 0 ;
+	        int max = 0 ;
+	        Stack<Integer> stack = new Stack<>() ;
+	        
+	        for(int curr=0; curr<heights.length; curr++){
+
+	            if(stack.isEmpty() || heights[curr] >= heights[stack.peek()]){
+	                stack.push(curr) ;
+	            }else{
+	                
+	                int right = curr ;
+	                int index = stack.pop() ;
+	                
+	                while(!stack.isEmpty() && heights[index] == heights[stack.peek()]){
+	                    index = stack.pop() ;
+	                }
+	                
+	                int leftMost = (stack.isEmpty())? -1: stack.peek() ;
+	                
+	                max = Math.max(max, (right - leftMost - 1) * heights[index]) ;
+	                
+	                curr -- ;
+	                
+	            }
+	            
+	        }
+	        
+	        int rightMost = stack.peek() + 1 ;
+	        while(!stack.isEmpty()){
+	            
+	            int index = stack.pop() ;
+	            int left = (stack.isEmpty()) ? -1 : stack.peek() ;
+	            max = Math.max(max, (rightMost - left - 1) * heights[index]) ;
+	            
+	        }
+	        
+	        return max ;
+	        
+	    }	
 	
 }
