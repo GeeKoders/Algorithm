@@ -1,16 +1,20 @@
-package Hash;
+package Learn.Hash;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 public class TopKFrequentElements {
 
 	
 	/*
+	 * Top K Frequent Elements (Medium)
+	 * 
 	 * https://leetcode.com/explore/learn/card/hash-table/187/conclusion-hash-table/1133/
+	 * 
 	 * solution: https://leetcode.com/problems/top-k-frequent-elements/solution/
 	 * 
 	 * Given a non-empty array of integers, return the k most frequent elements.
@@ -124,7 +128,45 @@ public class TopKFrequentElements {
 		}
 		return res;
 	}
-	
+	/*
+	 * Runtime: 11 ms, faster than 49.71% of Java online submissions for Top K Frequent Elements.
+	 * Memory Usage: 41.4 MB, less than 88.86% of Java online submissions for Top K Frequent Elements.
+	 * 
+	 * Time complexity: O(Nlogk)
+	 * Space complexity: O(N+k)
+	 * 
+	 */
+	public int[] topKFrequent3(int[] nums, int k) {
+        
+        if(k == nums.length) return nums ;
+        
+        Map<Integer, Integer> map = new HashMap<>() ;
+        
+        for(int n: nums){
+            map.put(n, map.getOrDefault(n, 0) + 1) ;
+        }
+        
+        PriorityQueue<Integer> heap = new PriorityQueue<>((n1, n2) -> map.get(n1) - map.get(n2)) ;
+        
+        
+       for(int n:map.keySet()){
+          
+          heap.add(n) ;
+          if(heap.size() > k) heap.poll() ;
+          
+       }  
+       
+       int []res = new int[k] ;
+       int count = 0; 
+       while(heap.size()>0){
+           
+           res[count++] = heap.poll() ;
+           
+       }
+        
+       return res ;
+        
+    }
 	
 	
 
