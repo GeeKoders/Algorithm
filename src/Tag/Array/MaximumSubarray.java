@@ -10,8 +10,8 @@ public class MaximumSubarray {
 	 * 
 	 * https://leetcode.com/problems/maximum-subarray/solution/
 	 * 
-	 * Runtime: 2 ms, faster than 13.76% of Java online submissions for Maximum Subarray.
-	 * Memory Usage: 41.5 MB, less than 7.16% of Java online submissions for Maximum Subarray.
+	 * Runtime: 1 ms, faster than 47.83% of Java online submissions for Maximum Subarray.
+	 * Memory Usage: 38.7 MB, less than 75.14% of Java online submissions for Maximum Subarray.
 	 * 
 	 * Time complexity: O(N)
 	 * Space complexity: O(1)
