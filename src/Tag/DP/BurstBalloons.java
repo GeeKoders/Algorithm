@@ -9,6 +9,8 @@ public class BurstBalloons {
 	 * 
 	 * solution: https://leetcode.com/problems/burst-balloons/solution/
 	 * 
+	 * reference: https://www.youtube.com/watch?v=0PoWegfg03A&ab_channel=happygirlzt
+	 * 
 	 * Runtime: 59 ms, faster than 97.90% of Java online submissions for Burst Balloons.
 	 * Memory Usage: 38.4 MB, less than 71.04% of Java online submissions for Burst Balloons.
 	 * 
